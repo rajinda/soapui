@@ -1,0 +1,1420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="commondata-slt" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_ICommonData" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_ICommonData" soapVersion="1_1" anonymous="optional" definition="http://192.168.51.61/duosltv5/v5services/duosoftware.commondata/commondata.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.51.61/duosltv5/v5services/duosoftware.commondata/commondata.svc?wsdl"><con:part><con:url>http://192.168.51.61/duosltv5/v5services/duosoftware.commondata/commondata.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CommonData" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICommonData_saveCommonDataRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveCommonDataRecord"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_saveCommonDataRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveCommonDataRecordResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_getSpecificCommonDataRecordByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSpecificCommonDataRecordByCode"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_getSpecificCommonDataRecordByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSpecificCommonDataRecordByCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_getAllCommonDataRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCommonDataRecords"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_getAllCommonDataRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCommonDataRecordsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_CreateTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTable"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_CreateTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTableResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_InserTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserTable"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_InserTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserTableResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_CheckTableExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTableExists"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_CheckTableExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTableExistsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetColumnData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnData"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetColumnData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetAnyData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnyData"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetAnyData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnyDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_InsertData_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertData"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_InsertData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetDataSetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSetData"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_GetDataSetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSetDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_UpdateDuobase_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDuobase"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_UpdateDuobase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDuobaseResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_UpdateData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateData"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_UpdateData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_DeleteData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteData"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_DeleteData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_ExportDuobase_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportDuobase"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_ExportDuobase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportDuobaseResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_ImportDuobase_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportDuobase"/>
+  </wsdl:message>
+  <wsdl:message name="ICommonData_ImportDuobase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportDuobaseResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ICommonData">
+    <wsdl:operation name="saveCommonDataRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/saveCommonDataRecord" message="tns:ICommonData_saveCommonDataRecord_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/saveCommonDataRecordResponse" message="tns:ICommonData_saveCommonDataRecord_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificCommonDataRecordByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/getSpecificCommonDataRecordByCode" message="tns:ICommonData_getSpecificCommonDataRecordByCode_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/getSpecificCommonDataRecordByCodeResponse" message="tns:ICommonData_getSpecificCommonDataRecordByCode_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCommonDataRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/getAllCommonDataRecords" message="tns:ICommonData_getAllCommonDataRecords_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/getAllCommonDataRecordsResponse" message="tns:ICommonData_getAllCommonDataRecords_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/CreateTable" message="tns:ICommonData_CreateTable_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/CreateTableResponse" message="tns:ICommonData_CreateTable_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="InserTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/InserTable" message="tns:ICommonData_InserTable_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/InserTableResponse" message="tns:ICommonData_InserTable_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/GetData" message="tns:ICommonData_GetData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/GetDataResponse" message="tns:ICommonData_GetData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTableExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/CheckTableExists" message="tns:ICommonData_CheckTableExists_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/CheckTableExistsResponse" message="tns:ICommonData_CheckTableExists_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/GetColumnData" message="tns:ICommonData_GetColumnData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/GetColumnDataResponse" message="tns:ICommonData_GetColumnData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnyData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/GetAnyData" message="tns:ICommonData_GetAnyData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/GetAnyDataResponse" message="tns:ICommonData_GetAnyData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="InsertData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/InsertData" message="tns:ICommonData_InsertData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/InsertDataResponse" message="tns:ICommonData_InsertData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/GetDataSetData" message="tns:ICommonData_GetDataSetData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/GetDataSetDataResponse" message="tns:ICommonData_GetDataSetData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDuobase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/UpdateDuobase" message="tns:ICommonData_UpdateDuobase_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/UpdateDuobaseResponse" message="tns:ICommonData_UpdateDuobase_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/UpdateData" message="tns:ICommonData_UpdateData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/UpdateDataResponse" message="tns:ICommonData_UpdateData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/DeleteData" message="tns:ICommonData_DeleteData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/DeleteDataResponse" message="tns:ICommonData_DeleteData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExportDuobase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/ExportDuobase" message="tns:ICommonData_ExportDuobase_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/ExportDuobaseResponse" message="tns:ICommonData_ExportDuobase_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDuobase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommonData/ImportDuobase" message="tns:ICommonData_ImportDuobase_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommonData/ImportDuobaseResponse" message="tns:ICommonData_ImportDuobase_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICommonData" type="tns:ICommonData">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="saveCommonDataRecord">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/saveCommonDataRecord" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificCommonDataRecordByCode">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/getSpecificCommonDataRecordByCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCommonDataRecords">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/getAllCommonDataRecords" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/CreateTable" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserTable">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/InserTable" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/GetData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTableExists">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/CheckTableExists" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/GetColumnData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnyData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/GetAnyData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/InsertData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSetData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/GetDataSetData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDuobase">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/UpdateDuobase" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/UpdateData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteData">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/DeleteData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportDuobase">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/ExportDuobase" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDuobase">
+      <soap:operation soapAction="http://tempuri.org/ICommonData/ImportDuobase" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CommonData">
+    <wsdl:port name="BasicHttpBinding_ICommonData" binding="tns:BasicHttpBinding_ICommonData">
+      <soap:address location="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+  <xs:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:element name="saveCommonDataRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordData" nillable="true" type="q1:CommonDataRecord" xmlns:q1="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveCommonDataRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveCommonDataRecordResult" nillable="true" type="q2:ArrayOfKeyValueOfstringanyType" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSpecificCommonDataRecordByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordCode" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSpecificCommonDataRecordByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getSpecificCommonDataRecordByCodeResult" nillable="true" type="q3:CommonDataRecord" xmlns:q3="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllCommonDataRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sinceID" type="xs:long"/>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllCommonDataRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAllCommonDataRecordsResult" nillable="true" type="q4:ArrayOfCommonDataRecord" xmlns:q4="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TableData" nillable="true" type="q5:DynamicTable" xmlns:q5="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTableResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Query" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserTableResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="q6:ArrayOfArrayOfKeyValueOfstringanyType" xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckTableExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckTableExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckTableExistsResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetColumnData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FirstSet" nillable="true" type="q7:ArrayOfKeyValueOfColumnColumn5oN8bcPt" xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="SecondSet" nillable="true" type="q8:ArrayOfKeyValueOfColumnColumn5oN8bcPt" xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="ThirdSet" nillable="true" type="q9:ArrayOfKeyValueOfColumnColumn5oN8bcPt" xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetColumnDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetColumnDataResult" nillable="true" type="q10:ArrayOfArrayOfKeyValueOfstringanyType" xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnyData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InputVal" nillable="true" type="q11:ArrayOfKeyValueOfstringstring" xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="OutColumn" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnyDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAnyDataResult" nillable="true" type="q12:ArrayOfstring" xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TableData" nillable="true" type="q13:DynamicTable" xmlns:q13="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+        <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDataResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SQL" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int"/>
+        <xs:element minOccurs="0" name="PageSize" type="xs:int"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataSetDataResult" nillable="true" type="q14:DataSetData" xmlns:q14="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDuobase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="data" nillable="true" type="q15:DataSetData" xmlns:q15="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+        <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDuobaseResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oldvalues" nillable="true" type="q16:ArrayOfKeyValueOfstringstring" xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="newvalues" nillable="true" type="q17:ArrayOfKeyValueOfstringstring" xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="tablename" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateDataResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="values" nillable="true" type="q18:ArrayOfKeyValueOfstringstring" xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="tablename" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDataResult" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportDuobase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guRecordIDs" nillable="true" type="q19:ArrayOfdecimal" xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportDuobaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExportDuobaseResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportDuobase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportDuobaseResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts">
+  <xs:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data"/>
+  <xs:complexType name="CommonDataRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cache" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="CommonData" nillable="true" type="tns:ArrayOfCommonDataField"/>
+      <xs:element minOccurs="0" name="CommonDataApps" nillable="true" type="tns:ArrayOfCommonDataApps"/>
+      <xs:element minOccurs="0" name="CommonDataValues" nillable="true" type="tns:ArrayOfCommonDataValue"/>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int"/>
+      <xs:element minOccurs="0" name="GuTranID" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="OperationalStatus" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecordCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecordCultureName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecordID" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="RecordName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecordStatus" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="RecordType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ResourceID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Separate" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="TenantID" type="xs:int"/>
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDataRecord" nillable="true" type="tns:CommonDataRecord"/>
+  <xs:complexType name="ArrayOfCommonDataField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDataField" nillable="true" type="tns:CommonDataField"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDataField" nillable="true" type="tns:ArrayOfCommonDataField"/>
+  <xs:complexType name="CommonDataField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int"/>
+      <xs:element minOccurs="0" name="FieldCultureName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FieldData" nillable="true" type="tns:ArrayOfCommonFieldValue"/>
+      <xs:element minOccurs="0" name="FieldID" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FieldType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+      <xs:element minOccurs="0" name="IsPrimaryKey" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="OnChangeToCulture" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="RecordID" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ScheduleID" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="TenantID" type="xs:int"/>
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDataField" nillable="true" type="tns:CommonDataField"/>
+  <xs:complexType name="ArrayOfCommonFieldValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonFieldValue" nillable="true" type="tns:CommonFieldValue"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonFieldValue" nillable="true" type="tns:ArrayOfCommonFieldValue"/>
+  <xs:complexType name="CommonFieldValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int"/>
+      <xs:element minOccurs="0" name="FieldId" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="FieldKey" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FieldValue" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+      <xs:element minOccurs="0" name="ScheduleId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="TenantID" type="xs:int"/>
+      <xs:element minOccurs="0" name="ViewObjectId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonFieldValue" nillable="true" type="tns:CommonFieldValue"/>
+  <xs:complexType name="ArrayOfCommonDataApps">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDataApps" nillable="true" type="tns:CommonDataApps"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDataApps" nillable="true" type="tns:ArrayOfCommonDataApps"/>
+  <xs:complexType name="CommonDataApps">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int"/>
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FieldID" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="GUApplicationID" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+      <xs:element minOccurs="0" name="RecordStatus" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ScheduleID" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="TenantID" type="xs:int"/>
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDataApps" nillable="true" type="tns:CommonDataApps"/>
+  <xs:complexType name="ArrayOfCommonDataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDataValue" nillable="true" type="tns:CommonDataValue"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDataValue" nillable="true" type="tns:ArrayOfCommonDataValue"/>
+  <xs:complexType name="CommonDataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int"/>
+      <xs:element minOccurs="0" name="FieldID" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+      <xs:element minOccurs="0" name="RecordDataID" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="RecordFieldData" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="RowID" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="TenantID" type="xs:int"/>
+      <xs:element minOccurs="0" name="ViewObjectID" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonDataValue" nillable="true" type="tns:CommonDataValue"/>
+  <xs:complexType name="ArrayOfCommonDataRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonDataRecord" nillable="true" type="tns:CommonDataRecord"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonDataRecord" nillable="true" type="tns:ArrayOfCommonDataRecord"/>
+  <xs:complexType name="DynamicTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnDtl" nillable="true" type="tns:ArrayOfColumns"/>
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicTable" nillable="true" type="tns:DynamicTable"/>
+  <xs:complexType name="ArrayOfColumns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Columns" nillable="true" type="tns:Columns"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColumns" nillable="true" type="tns:ArrayOfColumns"/>
+  <xs:complexType name="Columns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowNulls" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="DataType" type="q1:SqlDbType" xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data"/>
+      <xs:element minOccurs="0" name="PrimaryKey" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="columnLength" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="columnName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="columnValue" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Columns" nillable="true" type="tns:Columns"/>
+  <xs:complexType name="Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Column" nillable="true" type="tns:Column"/>
+  <xs:complexType name="DataSetData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataXML" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tables" nillable="true" type="tns:ArrayOfDataTableInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataSetData" nillable="true" type="tns:DataSetData"/>
+  <xs:complexType name="ArrayOfDataTableInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataTableInfo" nillable="true" type="tns:DataTableInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataTableInfo" nillable="true" type="tns:ArrayOfDataTableInfo"/>
+  <xs:complexType name="DataTableInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatasetColumns" nillable="true" type="tns:ArrayOfDataColumnInfo"/>
+      <xs:element minOccurs="0" name="DatasetTableName" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataTableInfo" nillable="true" type="tns:DataTableInfo"/>
+  <xs:complexType name="ArrayOfDataColumnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataColumnInfo" nillable="true" type="tns:DataColumnInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataColumnInfo" nillable="true" type="tns:ArrayOfDataColumnInfo"/>
+  <xs:complexType name="DataColumnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatasetColumnName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DatasetColumnTitle" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DatasetDataTypeName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DatasetDisplayIndex" type="xs:int"/>
+      <xs:element minOccurs="0" name="DatasetEditControlType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DatasetIsKey" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="DatasetIsReadOnly" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="DatasetIsRequired" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="DatasetMaxLength" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataColumnInfo" nillable="true" type="tns:DataColumnInfo"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/System.Data">
+  <xs:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:simpleType name="SqlDbType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BigInt"/>
+      <xs:enumeration value="Binary"/>
+      <xs:enumeration value="Bit"/>
+      <xs:enumeration value="Char"/>
+      <xs:enumeration value="DateTime"/>
+      <xs:enumeration value="Decimal"/>
+      <xs:enumeration value="Float"/>
+      <xs:enumeration value="Image"/>
+      <xs:enumeration value="Int"/>
+      <xs:enumeration value="Money"/>
+      <xs:enumeration value="NChar"/>
+      <xs:enumeration value="NText"/>
+      <xs:enumeration value="NVarChar"/>
+      <xs:enumeration value="Real"/>
+      <xs:enumeration value="UniqueIdentifier"/>
+      <xs:enumeration value="SmallDateTime"/>
+      <xs:enumeration value="SmallInt"/>
+      <xs:enumeration value="SmallMoney"/>
+      <xs:enumeration value="Text"/>
+      <xs:enumeration value="Timestamp"/>
+      <xs:enumeration value="TinyInt"/>
+      <xs:enumeration value="VarBinary"/>
+      <xs:enumeration value="VarChar"/>
+      <xs:enumeration value="Variant"/>
+      <xs:enumeration value="Xml">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Udt">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">29</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Structured">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Date">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Time">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DateTime2">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DateTimeOffset">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SqlDbType" nillable="true" type="tns:SqlDbType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+  <xs:import schemaLocation="http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+  <xs:complexType name="ArrayOfKeyValueOfstringanyType">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringanyType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string"/>
+            <xs:element name="Value" nillable="true" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringanyType" nillable="true" type="tns:ArrayOfKeyValueOfstringanyType"/>
+  <xs:complexType name="ArrayOfArrayOfKeyValueOfstringanyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfKeyValueOfstringanyType" nillable="true" type="tns:ArrayOfKeyValueOfstringanyType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArrayOfKeyValueOfstringanyType" nillable="true" type="tns:ArrayOfArrayOfKeyValueOfstringanyType"/>
+  <xs:complexType name="ArrayOfKeyValueOfColumnColumn5oN8bcPt">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfColumnColumn5oN8bcPt">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="q1:Column" xmlns:q1="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+            <xs:element name="Value" nillable="true" type="q2:Column" xmlns:q2="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfColumnColumn5oN8bcPt" nillable="true" type="tns:ArrayOfKeyValueOfColumnColumn5oN8bcPt"/>
+  <xs:complexType name="ArrayOfKeyValueOfstringstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringstring">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string"/>
+            <xs:element name="Value" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring"/>
+  <xs:complexType name="ArrayOfstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring"/>
+  <xs:complexType name="ArrayOfdecimal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="decimal" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdecimal" nillable="true" type="tns:ArrayOfdecimal"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/CheckTableExists" name="CheckTableExists" bindingOperationName="CheckTableExists" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CheckTableExists>
+         <!--Optional:-->
+         <tem:TableName>?</tem:TableName>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:CheckTableExists>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/CheckTableExists"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/CreateTable" name="CreateTable" bindingOperationName="CreateTable" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:duos="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:CreateTable>
+         <!--Optional:-->
+         <tem:TableData>
+            <!--Optional:-->
+            <duos:ColumnDtl>
+               <!--Zero or more repetitions:-->
+               <duos:Columns>
+                  <!--Optional:-->
+                  <duos:AllowNulls>0</duos:AllowNulls>
+                  <!--Optional:-->
+                  <duos:DataType>Bit</duos:DataType>
+                  <!--Optional:-->
+                  <duos:PrimaryKey>0</duos:PrimaryKey>
+                  <!--Optional:-->
+                  <duos:columnLength>6</duos:columnLength>
+                  <!--Optional:-->
+                  <duos:columnName>AutoAnswerByDefault</duos:columnName>
+                  <!--Optional:-->
+                  <duos:columnValue>true</duos:columnValue>
+               </duos:Columns>
+            </duos:ColumnDtl>
+            <!--Optional:-->
+            <duos:TableName>DuoSoftPhone_Win_AgentEvent</duos:TableName>
+         </tem:TableData>
+         <!--Optional:-->
+         <tem:securityToken>033bcce3502bb0c5bc7a3f29534c4ca8</tem:securityToken>
+      </tem:CreateTable>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/CreateTable"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/DeleteData" name="DeleteData" bindingOperationName="DeleteData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:DeleteData>
+         <!--Optional:-->
+         <tem:values>
+            <!--Zero or more repetitions:-->
+            <arr:KeyValueOfstringstring>
+               <arr:Key>?</arr:Key>
+               <arr:Value>?</arr:Value>
+            </arr:KeyValueOfstringstring>
+         </tem:values>
+         <!--Optional:-->
+         <tem:tablename>?</tem:tablename>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:DeleteData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/DeleteData"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/ExportDuobase" name="ExportDuobase" bindingOperationName="ExportDuobase" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:ExportDuobase>
+         <!--Optional:-->
+         <tem:guRecordIDs>
+            <!--Zero or more repetitions:-->
+            <arr:decimal>?</arr:decimal>
+         </tem:guRecordIDs>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:ExportDuobase>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/ExportDuobase"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/getAllCommonDataRecords" name="getAllCommonDataRecords" bindingOperationName="getAllCommonDataRecords" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:getAllCommonDataRecords>
+         <!--Optional:-->
+         <tem:sinceID>?</tem:sinceID>
+         <!--Optional:-->
+         <tem:securityToken>?</tem:securityToken>
+      </tem:getAllCommonDataRecords>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/getAllCommonDataRecords"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/GetAnyData" name="GetAnyData" bindingOperationName="GetAnyData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetAnyData>
+         <!--Optional:-->
+         <tem:InputVal>
+            <!--Zero or more repetitions:-->
+            <arr:KeyValueOfstringstring>
+               <arr:Key>?</arr:Key>
+               <arr:Value>?</arr:Value>
+            </arr:KeyValueOfstringstring>
+         </tem:InputVal>
+         <!--Optional:-->
+         <tem:OutColumn>?</tem:OutColumn>
+         <!--Optional:-->
+         <tem:TableName>?</tem:TableName>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:GetAnyData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/GetAnyData"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/GetColumnData" name="GetColumnData" bindingOperationName="GetColumnData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:duos="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetColumnData>
+         <!--Optional:-->
+         <tem:FirstSet>
+            <!--Zero or more repetitions:-->
+            <arr:KeyValueOfColumnColumn5oN8bcPt>
+               <arr:Key>
+                  <!--Optional:-->
+                  <duos:Name>?</duos:Name>
+                  <!--Optional:-->
+                  <duos:Value>?</duos:Value>
+               </arr:Key>
+               <arr:Value>
+                  <!--Optional:-->
+                  <duos:Name>?</duos:Name>
+                  <!--Optional:-->
+                  <duos:Value>?</duos:Value>
+               </arr:Value>
+            </arr:KeyValueOfColumnColumn5oN8bcPt>
+         </tem:FirstSet>
+         <!--Optional:-->
+         <tem:SecondSet>
+            <!--Zero or more repetitions:-->
+            <arr:KeyValueOfColumnColumn5oN8bcPt>
+               <arr:Key>
+                  <!--Optional:-->
+                  <duos:Name>?</duos:Name>
+                  <!--Optional:-->
+                  <duos:Value>?</duos:Value>
+               </arr:Key>
+               <arr:Value>
+                  <!--Optional:-->
+                  <duos:Name>?</duos:Name>
+                  <!--Optional:-->
+                  <duos:Value>?</duos:Value>
+               </arr:Value>
+            </arr:KeyValueOfColumnColumn5oN8bcPt>
+         </tem:SecondSet>
+         <!--Optional:-->
+         <tem:ThirdSet>
+            <!--Zero or more repetitions:-->
+            <arr:KeyValueOfColumnColumn5oN8bcPt>
+               <arr:Key>
+                  <!--Optional:-->
+                  <duos:Name>?</duos:Name>
+                  <!--Optional:-->
+                  <duos:Value>?</duos:Value>
+               </arr:Key>
+               <arr:Value>
+                  <!--Optional:-->
+                  <duos:Name>?</duos:Name>
+                  <!--Optional:-->
+                  <duos:Value>?</duos:Value>
+               </arr:Value>
+            </arr:KeyValueOfColumnColumn5oN8bcPt>
+         </tem:ThirdSet>
+         <!--Optional:-->
+         <tem:TableName>?</tem:TableName>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:GetColumnData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/GetColumnData"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/GetData" name="GetData" bindingOperationName="GetData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetData>
+         <!--Optional:-->
+         <tem:TableName>DuoSoftPhone_Win_events</tem:TableName>
+         <!--Optional:-->
+         <tem:SecurityToken>033bcce3502bb0c5bc7a3f29534c4ca8</tem:SecurityToken>
+      </tem:GetData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/GetData"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/GetDataSetData" name="GetDataSetData" bindingOperationName="GetDataSetData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetDataSetData>
+         <!--Optional:-->
+         <tem:SQL>?</tem:SQL>
+         <!--Optional:-->
+         <tem:PageNumber>?</tem:PageNumber>
+         <!--Optional:-->
+         <tem:PageSize>?</tem:PageSize>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:GetDataSetData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/GetDataSetData"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/getSpecificCommonDataRecordByCode" name="getSpecificCommonDataRecordByCode" bindingOperationName="getSpecificCommonDataRecordByCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:getSpecificCommonDataRecordByCode>
+         <!--Optional:-->
+         <tem:recordCode>?</tem:recordCode>
+         <!--Optional:-->
+         <tem:securityToken>?</tem:securityToken>
+      </tem:getSpecificCommonDataRecordByCode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/getSpecificCommonDataRecordByCode"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/ImportDuobase" name="ImportDuobase" bindingOperationName="ImportDuobase" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:ImportDuobase>
+         <!--Optional:-->
+         <tem:Data>?</tem:Data>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:ImportDuobase>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/ImportDuobase"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/InserTable" name="InserTable" bindingOperationName="InserTable" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:InserTable>
+         <!--Optional:-->
+         <tem:Query>?</tem:Query>
+         <!--Optional:-->
+         <tem:securityToken>?</tem:securityToken>
+      </tem:InserTable>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/InserTable"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/InsertData" name="InsertData" bindingOperationName="InsertData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:duos="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:InsertData>
+         <!--Optional:-->
+         <tem:TableData>
+            <!--Optional:-->
+            <duos:ColumnDtl>
+               <!--Zero or more repetitions:-->
+               <duos:Columns>
+                  <!--Optional:-->
+                  <duos:AllowNulls>?</duos:AllowNulls>
+                  <!--Optional:-->
+                  <duos:DataType>?</duos:DataType>
+                  <!--Optional:-->
+                  <duos:PrimaryKey>?</duos:PrimaryKey>
+                  <!--Optional:-->
+                  <duos:columnLength>?</duos:columnLength>
+                  <!--Optional:-->
+                  <duos:columnName>?</duos:columnName>
+                  <!--Optional:-->
+                  <duos:columnValue>?</duos:columnValue>
+               </duos:Columns>
+            </duos:ColumnDtl>
+            <!--Optional:-->
+            <duos:TableName>?</duos:TableName>
+         </tem:TableData>
+         <!--Optional:-->
+         <tem:securityToken>?</tem:securityToken>
+      </tem:InsertData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/InsertData"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/saveCommonDataRecord" name="saveCommonDataRecord" bindingOperationName="saveCommonDataRecord" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:duos="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:saveCommonDataRecord>
+         <!--Optional:-->
+         <tem:recordData>
+            <!--Optional:-->
+            <duos:Cache>?</duos:Cache>
+            <!--Optional:-->
+            <duos:CommonData>
+               <!--Zero or more repetitions:-->
+               <duos:CommonDataField>
+                  <!--Optional:-->
+                  <duos:CompanyID>?</duos:CompanyID>
+                  <!--Optional:-->
+                  <duos:FieldCultureName>?</duos:FieldCultureName>
+                  <!--Optional:-->
+                  <duos:FieldData>
+                     <!--Zero or more repetitions:-->
+                     <duos:CommonFieldValue>
+                        <!--Optional:-->
+                        <duos:CompanyId>?</duos:CompanyId>
+                        <!--Optional:-->
+                        <duos:FieldId>?</duos:FieldId>
+                        <!--Optional:-->
+                        <duos:FieldKey>?</duos:FieldKey>
+                        <!--Optional:-->
+                        <duos:FieldValue>?</duos:FieldValue>
+                        <!--Optional:-->
+                        <duos:ID>?</duos:ID>
+                        <!--Optional:-->
+                        <duos:ScheduleId>?</duos:ScheduleId>
+                        <!--Optional:-->
+                        <duos:TenantID>?</duos:TenantID>
+                        <!--Optional:-->
+                        <duos:ViewObjectId>?</duos:ViewObjectId>
+                     </duos:CommonFieldValue>
+                  </duos:FieldData>
+                  <!--Optional:-->
+                  <duos:FieldID>?</duos:FieldID>
+                  <!--Optional:-->
+                  <duos:FieldName>?</duos:FieldName>
+                  <!--Optional:-->
+                  <duos:FieldType>?</duos:FieldType>
+                  <!--Optional:-->
+                  <duos:ID>?</duos:ID>
+                  <!--Optional:-->
+                  <duos:IsPrimaryKey>?</duos:IsPrimaryKey>
+                  <!--Optional:-->
+                  <duos:OnChangeToCulture>?</duos:OnChangeToCulture>
+                  <!--Optional:-->
+                  <duos:RecordID>?</duos:RecordID>
+                  <!--Optional:-->
+                  <duos:ScheduleID>?</duos:ScheduleID>
+                  <!--Optional:-->
+                  <duos:TenantID>?</duos:TenantID>
+                  <!--Optional:-->
+                  <duos:ViewObjectID>?</duos:ViewObjectID>
+               </duos:CommonDataField>
+            </duos:CommonData>
+            <!--Optional:-->
+            <duos:CommonDataApps>
+               <!--Zero or more repetitions:-->
+               <duos:CommonDataApps>
+                  <!--Optional:-->
+                  <duos:Application>?</duos:Application>
+                  <!--Optional:-->
+                  <duos:ApplicationCode>?</duos:ApplicationCode>
+                  <!--Optional:-->
+                  <duos:CompanyID>?</duos:CompanyID>
+                  <!--Optional:-->
+                  <duos:CreateDate>?</duos:CreateDate>
+                  <!--Optional:-->
+                  <duos:FieldID>?</duos:FieldID>
+                  <!--Optional:-->
+                  <duos:GUApplicationID>?</duos:GUApplicationID>
+                  <!--Optional:-->
+                  <duos:ID>?</duos:ID>
+                  <!--Optional:-->
+                  <duos:RecordStatus>?</duos:RecordStatus>
+                  <!--Optional:-->
+                  <duos:ScheduleID>?</duos:ScheduleID>
+                  <!--Optional:-->
+                  <duos:TenantID>?</duos:TenantID>
+                  <!--Optional:-->
+                  <duos:ViewObjectID>?</duos:ViewObjectID>
+               </duos:CommonDataApps>
+            </duos:CommonDataApps>
+            <!--Optional:-->
+            <duos:CommonDataValues>
+               <!--Zero or more repetitions:-->
+               <duos:CommonDataValue>
+                  <!--Optional:-->
+                  <duos:CompanyID>?</duos:CompanyID>
+                  <!--Optional:-->
+                  <duos:FieldID>?</duos:FieldID>
+                  <!--Optional:-->
+                  <duos:FieldName>?</duos:FieldName>
+                  <!--Optional:-->
+                  <duos:ID>?</duos:ID>
+                  <!--Optional:-->
+                  <duos:RecordDataID>?</duos:RecordDataID>
+                  <!--Optional:-->
+                  <duos:RecordFieldData>?</duos:RecordFieldData>
+                  <!--Optional:-->
+                  <duos:RecordID>?</duos:RecordID>
+                  <!--Optional:-->
+                  <duos:RowID>?</duos:RowID>
+                  <!--Optional:-->
+                  <duos:TenantID>?</duos:TenantID>
+                  <!--Optional:-->
+                  <duos:ViewObjectID>?</duos:ViewObjectID>
+               </duos:CommonDataValue>
+            </duos:CommonDataValues>
+            <!--Optional:-->
+            <duos:CompanyID>?</duos:CompanyID>
+            <!--Optional:-->
+            <duos:GuTranID>?</duos:GuTranID>
+            <!--Optional:-->
+            <duos:OperationalStatus>?</duos:OperationalStatus>
+            <!--Optional:-->
+            <duos:RecordCode>?</duos:RecordCode>
+            <!--Optional:-->
+            <duos:RecordCultureName>?</duos:RecordCultureName>
+            <!--Optional:-->
+            <duos:RecordID>?</duos:RecordID>
+            <!--Optional:-->
+            <duos:RecordName>?</duos:RecordName>
+            <!--Optional:-->
+            <duos:RecordStatus>?</duos:RecordStatus>
+            <!--Optional:-->
+            <duos:RecordType>?</duos:RecordType>
+            <!--Optional:-->
+            <duos:ResourceID>?</duos:ResourceID>
+            <!--Optional:-->
+            <duos:Separate>?</duos:Separate>
+            <!--Optional:-->
+            <duos:TenantID>?</duos:TenantID>
+            <!--Optional:-->
+            <duos:ViewObjectID>?</duos:ViewObjectID>
+         </tem:recordData>
+         <!--Optional:-->
+         <tem:securityToken>?</tem:securityToken>
+      </tem:saveCommonDataRecord>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/saveCommonDataRecord"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/UpdateData" name="UpdateData" bindingOperationName="UpdateData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:UpdateData>
+         <!--Optional:-->
+         <tem:oldvalues>
+            <!--Zero or more repetitions:-->
+            <arr:KeyValueOfstringstring>
+               <arr:Key>?</arr:Key>
+               <arr:Value>?</arr:Value>
+            </arr:KeyValueOfstringstring>
+         </tem:oldvalues>
+         <!--Optional:-->
+         <tem:newvalues>
+            <!--Zero or more repetitions:-->
+            <arr:KeyValueOfstringstring>
+               <arr:Key>?</arr:Key>
+               <arr:Value>?</arr:Value>
+            </arr:KeyValueOfstringstring>
+         </tem:newvalues>
+         <!--Optional:-->
+         <tem:tablename>?</tem:tablename>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:UpdateData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/UpdateData"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ICommonData/UpdateDuobase" name="UpdateDuobase" bindingOperationName="UpdateDuobase" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.51.61/DUOSLTV5/V5Services/Duosoftware.CommonData/CommonData.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:duos="http://schemas.datacontract.org/2004/07/Duosoftware.Duobase.Contracts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:UpdateDuobase>
+         <!--Optional:-->
+         <tem:data>
+            <!--Optional:-->
+            <duos:DataXML>?</duos:DataXML>
+            <!--Optional:-->
+            <duos:Tables>
+               <!--Zero or more repetitions:-->
+               <duos:DataTableInfo>
+                  <!--Optional:-->
+                  <duos:DatasetColumns>
+                     <!--Zero or more repetitions:-->
+                     <duos:DataColumnInfo>
+                        <!--Optional:-->
+                        <duos:DatasetColumnName>?</duos:DatasetColumnName>
+                        <!--Optional:-->
+                        <duos:DatasetColumnTitle>?</duos:DatasetColumnTitle>
+                        <!--Optional:-->
+                        <duos:DatasetDataTypeName>?</duos:DatasetDataTypeName>
+                        <!--Optional:-->
+                        <duos:DatasetDisplayIndex>?</duos:DatasetDisplayIndex>
+                        <!--Optional:-->
+                        <duos:DatasetEditControlType>?</duos:DatasetEditControlType>
+                        <!--Optional:-->
+                        <duos:DatasetIsKey>?</duos:DatasetIsKey>
+                        <!--Optional:-->
+                        <duos:DatasetIsReadOnly>?</duos:DatasetIsReadOnly>
+                        <!--Optional:-->
+                        <duos:DatasetIsRequired>?</duos:DatasetIsRequired>
+                        <!--Optional:-->
+                        <duos:DatasetMaxLength>?</duos:DatasetMaxLength>
+                     </duos:DataColumnInfo>
+                  </duos:DatasetColumns>
+                  <!--Optional:-->
+                  <duos:DatasetTableName>?</duos:DatasetTableName>
+               </duos:DataTableInfo>
+            </duos:Tables>
+         </tem:data>
+         <!--Optional:-->
+         <tem:TableName>?</tem:TableName>
+         <!--Optional:-->
+         <tem:SecurityToken>?</tem:SecurityToken>
+      </tem:UpdateDuobase>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICommonData/UpdateDuobase"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

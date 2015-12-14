@@ -1,0 +1,2801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="sandbox.voxbone" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="VoxAPIHttpBinding" type="wsdl" bindingName="{http://www.voxbone.com/VoxAPI}VoxAPIHttpBinding" soapVersion="1_1" anonymous="optional" definition="https://sandbox.voxbone.com/VoxAPI/services/VoxAPI?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://sandbox.voxbone.com/VoxAPI/services/VoxAPI?wsdl"><con:part><con:url>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.voxbone.com/VoxAPI" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://www.voxbone.com/VoxAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.voxbone.com/VoxAPI" version="1.0">
+      <!--REQUESTS-->
+      <xsd:element name="GetCountriesList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Type" nillable="false" type="tns:DIDType"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FeaturesFilter" type="tns:ArrayOfFeaturesIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetStatesList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CountryID" nillable="false" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Type" nillable="false" type="tns:DIDType"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FeaturesFilter" type="tns:ArrayOfFeaturesIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDGroupList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CountryID" nillable="false" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Type" type="tns:DIDType"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Filter" type="tns:DIDGroupFilter"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FeaturesFilter" type="tns:ArrayOfFeaturesIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDGroupInfo">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDGroupID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetFeaturesList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PlaceDIDsOrder">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDGroupID" nillable="false" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Quantity" nillable="false" type="tns:ID"/>
+            <xsd:element default="false" maxOccurs="1" minOccurs="1" name="AllowAsynchronous" type="xsd:boolean"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PurchaseInfo" nillable="false" type="tns:PurchaseInfo"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FeaturesFilter" type="tns:ArrayOfFeaturesIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDGroupPurchaseLock">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDGroupID" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Quantity" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PurchaseInfo" type="tns:PurchaseInfo"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PlaceOrderForLock">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="LockID" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LimitDIDChannels">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDsID" nillable="false" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LimitCapacity" nillable="false" type="xsd:int"/>
+            <xsd:element default="true" maxOccurs="1" minOccurs="1" name="UseMaximum" nillable="false" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetOrderStatus">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="OrderReference" nillable="false" type="xsd:string"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDsInfo">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Filter" nillable="false" type="tns:DIDsFilter"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetPurchaseInfoData">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CountryCodeA2" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="AreaCode" nillable="false" type="xsd:string"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IsPurchaseInfoValid">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDGroupID" nillable="false" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PurchaseInfo" nillable="false" type="tns:PurchaseInfo"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CancelDID">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDsID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfigureT38">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="T38" type="xsd:boolean"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfigureCodecs">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Codecs" type="tns:ArrayOfSipCodecs"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfigureDtmfMode">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DtmfMode" type="tns:DtmfMode"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfigureDnis">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Dnis" type="xsd:boolean"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfigureCpc">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PhoneType" type="tns:PhoneType"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Block" type="xsd:boolean"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MapDID">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Protocol" nillable="false" type="tns:ProtocolType"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="URI" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Description" nillable="false" type="xsd:string"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MapDIDCheckingStatus">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Protocol" nillable="false" type="tns:ProtocolType"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="URI" nillable="false" type="xsd:string"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetTrunkList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PlaceDIDsOnTrunk">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TrunkID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RemoveDIDsFromTrunk">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetTollfreeCreditPackageList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PurchaseTollfreeCredit">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TollfreeCreditPackageID" nillable="false" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Quantity" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetPOPList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateDelivery">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DeliveryID" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAccountBalance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDGroupPricing">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDGroupID" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="quantity" type="xsd:int"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateAddressForRegulation">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PurchaseInfo" nillable="false" type="tns:PurchaseInfo"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="RequestProofOfAddressVerification" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LinkDidsToAddress">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="AddressID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetRegulationAddressList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CountryID" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FirstName" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="LastName" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Company" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Zip" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AddressStatus" type="tns:RegulationAddressStatus"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RequestAddressVerification">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="AddressID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteRegulationAddress">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="AddressID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateCapacityGroup">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="NameCapacityGroup" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Capacity" nillable="false" type="xsd:int"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCapacityGroupList">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Filter" type="tns:CapacityGroupsFilter"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteCapacityGroup">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CapacityGroupID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateCapacityGroup">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="NameCapacityGroup" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Capacity" nillable="false" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CapacityGroupID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MapDidToCapacityGroup">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CapacityGroupID" nillable="false" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RemoveDidFromCapacityGroup">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:UserToken"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfDIDsIDs"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <!--RESPONSES-->
+      <xsd:element name="GetCountriesListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfCountries"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetStatesListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfStates"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDGroupListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="ArrayOfDIDGroups" type="tns:ArrayOfDIDGroups"/>
+          </xsd:sequence>
+          <xsd:attribute name="resultCount" type="xsd:int"/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetFeaturesListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="ArrayOfFeatures" type="tns:ArrayOfFeatures"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDGroupInfoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DIDGroup"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LimitDIDChannelsResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Capacity" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="UseTrunkMaximum" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfigureDidsResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Status" type="tns:ConfigureStatus"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PlaceDIDsOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="OrderReference" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Status" nillable="false" type="tns:OrderStatus"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfDIDs"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDGroupPurchaseLockResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="LockID" type="tns:ID"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PlaceOrderForLockResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="OrderReference" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Status" nillable="false" type="tns:OrderStatus"/>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfDIDs"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MapDIDChekingStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfMapStatus"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MapStatus" type="tns:MapStatus"/>
+      <xsd:complexType name="MapStatus">
+        <xsd:all>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DIDsID" type="tns:ID"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Status" type="tns:MappingStatus"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:simpleType name="MappingStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="MAPPED"/>
+          <xsd:enumeration value="UNMAPPED"/>
+          <xsd:enumeration value="VALIDATION_REQUIRED"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="GetOrderStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="OrderReference" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Status" nillable="false" type="tns:OrderStatus"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDsInfoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfDIDs"/>
+          </xsd:sequence>
+          <xsd:attribute name="resultCount" type="xsd:int"/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetPurchaseInfoDataResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfPurchaseInfoData"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IsPurchaseInfoValidResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Status" type="tns:PurchaseInfoStatus"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CancelDIDResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Canceled" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetTrunkListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfTrunks"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetTollfreeCreditPackageListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfTollfreeCreditPackages"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PurchaseTollfreeCreditResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="OrderReference" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="OrderStatus" type="tns:OrderStatus"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetPOPListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfPOPs"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAccountBalanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Balance" type="xsd:double"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Threshold" type="xsd:double"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Currency" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="IsActive" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDIDGroupPricingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Currency" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Setup100" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Monthly100" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateAddressForRegulationResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Address" type="tns:PurchaseInfo"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LinkDidsToAddressResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Linked" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetRegulationAddressListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfRegulationAddress"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RequestAddressVerificationResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Confirm" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteRegulationAddressResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Confirm" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCapacityGroupListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ArrayOfCapacityGroups"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateCapacityGroupResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CapacityGroup"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteCapacityGroupResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Deleted" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateCapacityGroupResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CapacityGroup"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MapDidToCapacityGroupResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Mapped" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RemoveDidFromCapacityGroupResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Removed" type="xsd:boolean"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <!--TYPES-->
+      <xsd:element name="UserToken" nillable="false">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Username" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Key" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Hash" type="xsd:string"/>
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Country">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CountryID" type="tns:ID"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CountryName" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CodeA2" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CountryCode" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="HasStates" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="State">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="StateID" type="tns:ID"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="StateName" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CodeA2" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DIDGroup">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDGroupID" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CountryName" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CityName" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="CleanedCityName" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Ratecenter" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="stock" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CountryCode" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="AreaCode" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Setup100" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Monthly100" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="RequirePurchaseInfo" type="xsd:boolean"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Available" type="xsd:boolean"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="RegulationRequirement" type="tns:RegulationRequirement"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="StateID" type="tns:ID"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="RegulationRequirement">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="AddressType" type="tns:AddressType"/>
+          <xsd:element default="true" maxOccurs="1" minOccurs="1" name="ProofRequired" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DID">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DIDsID" type="tns:ID"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="E164" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Type" type="tns:DIDType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CountryName" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CountryCode" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CityName" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="AreaCode" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="mapping" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="OrderReference" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Channels" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Delivery" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TrunkID" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MappingStatus" type="tns:MappingStatus"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DIDGroupID" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PurchaseInfo">
+        <xsd:all>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Firstname" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Lastname" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Company" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Salutation" type="tns:SalutationType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Street" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="StreetCode" type="tns:StreetCode"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MunicipalityCode" type="tns:MunicipalityCode"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BuildingNumber" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BuildingLetter" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ZipCode" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CountryCodeA2" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RegulationAddressId" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="RegulationAddressStatus" type="tns:RegulationAddressStatus"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:simpleType name="StreetCode">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="MunicipalityCode">
+        <xsd:restriction base="xsd:positiveInteger">
+          <xsd:minInclusive value="1"/>
+          <xsd:maxInclusive value="9999"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="PurchaseInfoData">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CityName" type="xsd:string"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="Zip" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Trunk">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TrunkID" type="tns:ID"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Zone" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DIDsOnTrunk" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="MaximumCapacity" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CapacityGroup">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CapacityGroupID" type="tns:ID"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="name" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DIDsOnCapacityGroup" type="xsd:int"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="MaximumCapacityCapacityGroup" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="TollfreeCreditPackage">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TollfreeCreditPackageID" type="tns:ID"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Name" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Price100" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="POP">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DeliveryID" type="tns:ID"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Name" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrayOfIPs"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <!--ARRAYS-->
+      <xsd:element name="ArrayOfCountries" type="tns:ArrayOfCountries"/>
+      <xsd:complexType name="ArrayOfCountries">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Country" type="tns:Country"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfStates" type="tns:ArrayOfStates"/>
+      <xsd:complexType name="ArrayOfStates">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="State" type="tns:State"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDIDsIDs" type="tns:ArrayOfDIDsIDs"/>
+      <xsd:complexType name="ArrayOfDIDsIDs">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="DIDsID" nillable="false" type="tns:ID"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfFeaturesIDs" type="tns:ArrayOfFeaturesIDs"/>
+      <xsd:complexType name="ArrayOfFeaturesIDs">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="FeaturesIDs" nillable="false" type="tns:ID"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDIDs" type="tns:ArrayOfDIDs"/>
+      <xsd:complexType name="ArrayOfDIDs">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="DID" nillable="false" type="tns:DID"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfMapStatus" type="tns:ArrayOfMapStatus"/>
+      <xsd:complexType name="ArrayOfMapStatus">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns:MapStatus"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfDIDGroups" type="tns:ArrayOfDIDGroups"/>
+      <xsd:complexType name="ArrayOfDIDGroups">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns:DIDGroup"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfPurchaseInfoData" type="tns:ArrayOfPurchaseInfoData"/>
+      <xsd:complexType name="ArrayOfPurchaseInfoData">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="PurchaseInfoData" nillable="false" type="tns:PurchaseInfoData"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfTrunks" type="tns:ArrayOfTrunks"/>
+      <xsd:complexType name="ArrayOfTrunks">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Trunk" nillable="false" type="tns:Trunk"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfTollfreeCreditPackages" type="tns:ArrayOfTollfreeCreditPackages"/>
+      <xsd:complexType name="ArrayOfTollfreeCreditPackages">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CreditPackage" nillable="false" type="tns:TollfreeCreditPackage"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfIPs" type="tns:ArrayOfIPs"/>
+      <xsd:complexType name="ArrayOfIPs">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="IP" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfPOPs" type="tns:ArrayOfPOPs"/>
+      <xsd:complexType name="ArrayOfPOPs">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="POP" type="tns:POP"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfSipCodecs" type="tns:ArrayOfSipCodecs"/>
+      <xsd:complexType name="ArrayOfSipCodecs">
+        <xsd:sequence>
+          <xsd:element maxOccurs="4" minOccurs="1" name="SipCodecs" type="tns:SipCodec"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfRegulationAddress" type="tns:ArrayOfRegulationAddress"/>
+      <xsd:complexType name="ArrayOfRegulationAddress">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="RegulationAddresses" nillable="false" type="tns:PurchaseInfo"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCapacityGroups" type="tns:ArrayOfCapacityGroups"/>
+      <xsd:complexType name="ArrayOfCapacityGroups">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns:CapacityGroup"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfFeatures" type="tns:ArrayOfFeatures"/>
+      <xsd:complexType name="ArrayOfFeatures">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Feature" type="tns:Feature"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <!--FILTERS-->
+      <xsd:complexType name="DIDGroupFilter">
+        <xsd:all>
+          <xsd:element default="true" maxOccurs="1" minOccurs="0" name="HideEmpty" type="xsd:boolean"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="StateID" type="tns:ID"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CleanedCityNamePattern" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PageNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PageSize" type="xsd:int"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="DIDsFilter">
+        <xsd:all>
+          <xsd:element maxOccurs="1" minOccurs="0" name="E164" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="OrderReference" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MappingStatus" type="tns:MappingStatus"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="NeedAddressLink" type="xsd:boolean"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PageNumber" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PageSize" type="xsd:int"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="CapacityGroupsFilter">
+        <xsd:all>
+          <xsd:element maxOccurs="1" minOccurs="0" name="NameCapacityGroup" nillable="false" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="E164" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <!--FAULTS-->
+      <xsd:complexType name="VoxAPIFaultDetail">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ErrorMessage" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ErrorCode" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <!--RESTRICTIONS-->
+      <xsd:simpleType name="ID">
+        <xsd:restriction base="xsd:int">
+          <xsd:minExclusive value="0"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="UserTokenKey">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="19"/>
+          <xsd:maxLength value="32"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="OrderStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="CREATED"/>
+          <xsd:enumeration value="CONFIRMED"/>
+          <xsd:enumeration value="FULFILLED"/>
+          <xsd:enumeration value="CANCELED"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="SalutationType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="MR"/>
+          <xsd:enumeration value="MS"/>
+          <xsd:enumeration value="COMPANY"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PurchaseInfoStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="VALID"/>
+          <xsd:enumeration value="INVALID"/>
+          <xsd:enumeration value="NO_INFO_REQUIRED"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ProtocolType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="SIP"/>
+          <xsd:enumeration value="IAX"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="DIDType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="GEOGRAPHIC"/>
+          <xsd:enumeration value="TOLLFREE"/>
+          <xsd:enumeration value="NATIONAL"/>
+          <xsd:enumeration value="MOBILE"/>
+          <xsd:enumeration value="INUM"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ConfigureStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="FULL_UPDATE"/>
+          <xsd:enumeration value="PARTIAL_UPDATE"/>
+          <xsd:enumeration value="NO_UPDATE"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="SipCodec">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="G711A"/>
+          <xsd:enumeration value="G711U"/>
+          <xsd:enumeration value="G729"/>
+          <xsd:enumeration value="G723"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="DtmfMode">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="RFC2833_INFO"/>
+          <xsd:enumeration value="RFC2833_INBAND"/>
+          <xsd:enumeration value="RFC2833"/>
+          <xsd:enumeration value="INBAND"/>
+          <xsd:enumeration value="INFO"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PhoneType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="ORDINARY"/>
+          <xsd:enumeration value="CELLULAR"/>
+          <xsd:enumeration value="PAYPHONE"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="AddressType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="WORLDWIDE"/>
+          <xsd:enumeration value="NATIONAL"/>
+          <xsd:enumeration value="LOCAL"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="RegulationAddressStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NOT_VERIFIED"/>
+          <xsd:enumeration value="DISABLED"/>
+          <xsd:enumeration value="VERIFIED"/>
+          <xsd:enumeration value="VERIFICATION_REQUESTED"/>
+          <xsd:enumeration value="REJECTED"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <!--<xsd:simpleType name="FeatureStatus">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="TEST_REQUIRED" />
+                    <xsd:enumeration value="IN_PROGRESS" />
+                    <xsd:enumeration value="SUPPORTED" />
+                    <xsd:enumeration value="NOT_SUPPORTED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+
+        <xsd:complexType name="FeatureCategory">
+            <xsd:all>
+                <xsd:element minOccurs="1" maxOccurs="1" name="FeatureCategoryID" type="tns:ID" />
+                <xsd:element minOccurs="1" maxOccurs="1" name="Name" type="xsd:string" />
+                <xsd:element minOccurs="1" maxOccurs="1" name="Description"  type="xsd:string" />
+            </xsd:all>
+        </xsd:complexType>-->
+      <xsd:complexType name="Feature">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FeatureID" type="tns:ID"/>
+          <!--<xsd:element minOccurs="1" maxOccurs="1" name="FeatureCategoryID" type="tns:ID" />-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="FeatureName" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Description" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="VoxAPIFault" type="tns:VoxAPIFaultDetail"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DeleteRegulationAddressRequest">
+    <wsdl:part name="DeleteRegulationAddress" element="tns:DeleteRegulationAddress"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="LinkDidsToAddressRequest">
+    <wsdl:part name="LinkDidsToAddress" element="tns:LinkDidsToAddress"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetTollfreeCreditPackageListResponse">
+    <wsdl:part name="GetTollfreeCreditPackageListResponse" element="tns:GetTollfreeCreditPackageListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureT38Request">
+    <wsdl:part name="ConfigureT38" element="tns:ConfigureT38"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MapDidToCapacityGroupResponse">
+    <wsdl:part name="MapDidToCapacityGroupResponse" element="tns:MapDidToCapacityGroupResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateCapacityGroupRequest">
+    <wsdl:part name="CreateCapacityGroup" element="tns:CreateCapacityGroup"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDGroupPurchaseLockRequest">
+    <wsdl:part name="GetDIDGroupPurchaseLock" element="tns:GetDIDGroupPurchaseLock"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureCpcRequest">
+    <wsdl:part name="ConfigureCpc" element="tns:ConfigureCpc"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateCapacityGroupResponse">
+    <wsdl:part name="CreateCapacityGroupResponse" element="tns:CreateCapacityGroupResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlaceDIDsOrderResponse">
+    <wsdl:part name="PlaceDIDsOrderResponse" element="tns:PlaceDIDsOrderResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveDIDsFromTrunkRequest">
+    <wsdl:part name="RemoveDIDsFromTrunk" element="tns:RemoveDIDsFromTrunk"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlaceOrderForLockRequest">
+    <wsdl:part name="PlaceOrderForLock" element="tns:PlaceOrderForLock"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCapacityGroupListResponse">
+    <wsdl:part name="GetCapacityGroupListResponse" element="tns:GetCapacityGroupListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateAddressForRegulationRequest">
+    <wsdl:part name="CreateAddressForRegulation" element="tns:CreateAddressForRegulation"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteCapacityGroupResponse">
+    <wsdl:part name="DeleteCapacityGroupResponse" element="tns:DeleteCapacityGroupResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveDidFromCapacityGroupResponse">
+    <wsdl:part name="RemoveDidFromCapacityGroupResponse" element="tns:RemoveDidFromCapacityGroupResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IsPurchaseInfoValidResponse">
+    <wsdl:part name="IsPurchaseInfoValidResponse" element="tns:IsPurchaseInfoValidResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureDtmfModeResponse">
+    <wsdl:part name="ConfigureDidsResponse" element="tns:ConfigureDidsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseInfoDataRequest">
+    <wsdl:part name="GetPurchaseInfoData" element="tns:GetPurchaseInfoData"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureDnisResponse">
+    <wsdl:part name="ConfigureDidsResponse" element="tns:ConfigureDidsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetStatesListRequest">
+    <wsdl:part name="GetStatesList" element="tns:GetStatesList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureCodecsRequest">
+    <wsdl:part name="ConfigureCodecs" element="tns:ConfigureCodecs"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveDIDsFromTrunkResponse"></wsdl:message>
+  <wsdl:message name="MapDIDCheckingStatusResponse">
+    <wsdl:part name="MapDIDChekingStatusResponse" element="tns:MapDIDChekingStatusResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CancelDIDRequest">
+    <wsdl:part name="CancelDID" element="tns:CancelDID"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCountriesListRequest">
+    <wsdl:part name="GetCountriesList" element="tns:GetCountriesList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetFeaturesListResponse">
+    <wsdl:part name="GetFeaturesListResponse" element="tns:GetFeaturesListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="LinkDidsToAddressResponse">
+    <wsdl:part name="LinkDidsToAddressResponse" element="tns:LinkDidsToAddressResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetStatesListResponse">
+    <wsdl:part name="GetStatesListResponse" element="tns:GetStatesListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MapDIDCheckingStatusRequest">
+    <wsdl:part name="MapDIDCheckingStatus" element="tns:MapDIDCheckingStatus"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeliveryRequest">
+    <wsdl:part name="UpdateDelivery" element="tns:UpdateDelivery"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureCodecsResponse">
+    <wsdl:part name="ConfigureDidsResponse" element="tns:ConfigureDidsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RequestAddressVerificationRequest">
+    <wsdl:part name="RequestAddressVerification" element="tns:RequestAddressVerification"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDsInfoResponse">
+    <wsdl:part name="GetDIDsInfoResponse" element="tns:GetDIDsInfoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="LimitDIDChannelsRequest">
+    <wsdl:part name="LimitDIDChannels" element="tns:LimitDIDChannels"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateCapacityGroupRequest">
+    <wsdl:part name="UpdateCapacityGroup" element="tns:UpdateCapacityGroup"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPOPListResponse">
+    <wsdl:part name="GetPOPListResponse" element="tns:GetPOPListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MapDidToCapacityGroupRequest">
+    <wsdl:part name="MapDidToCapacityGroup" element="tns:MapDidToCapacityGroup"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDGroupInfoRequest">
+    <wsdl:part name="GetDIDGroupInfo" element="tns:GetDIDGroupInfo"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCountriesListResponse">
+    <wsdl:part name="GetCountriesListResponse" element="tns:GetCountriesListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetTollfreeCreditPackageListRequest">
+    <wsdl:part name="GetTollfreeCreditPackageList" element="tns:GetTollfreeCreditPackageList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="VoxAPIFault">
+    <wsdl:part name="VoxAPIFault" element="tns:VoxAPIFault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusRequest">
+    <wsdl:part name="GetOrderStatus" element="tns:GetOrderStatus"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDGroupPricingRequest">
+    <wsdl:part name="GetDIDGroupPricing" element="tns:GetDIDGroupPricing"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureCpcResponse">
+    <wsdl:part name="ConfigureDidsResponse" element="tns:ConfigureDidsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetCapacityGroupListRequest">
+    <wsdl:part name="GetCapacityGroupList" element="tns:GetCapacityGroupList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDGroupPurchaseLockResponse">
+    <wsdl:part name="GetDIDGroupPurchaseLockResponse" element="tns:GetDIDGroupPurchaseLockResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDGroupListResponse">
+    <wsdl:part name="GetDIDGroupListResponse" element="tns:GetDIDGroupListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOrderStatusResponse">
+    <wsdl:part name="GetOrderStatusResponse" element="tns:GetOrderStatusResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateCapacityGroupResponse">
+    <wsdl:part name="UpdateCapacityGroupResponse" element="tns:UpdateCapacityGroupResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveDidFromCapacityGroupRequest">
+    <wsdl:part name="RemoveDidFromCapacityGroup" element="tns:RemoveDidFromCapacityGroup"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PurchaseTollfreeCreditRequest">
+    <wsdl:part name="PurchaseTollfreeCredit" element="tns:PurchaseTollfreeCredit"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureDtmfModeRequest">
+    <wsdl:part name="ConfigureDtmfMode" element="tns:ConfigureDtmfMode"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetRegulationAddressListRequest">
+    <wsdl:part name="GetRegulationAddressList" element="tns:GetRegulationAddressList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureT38Response">
+    <wsdl:part name="ConfigureDidsResponse" element="tns:ConfigureDidsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseInfoDataResponse">
+    <wsdl:part name="GetPurchaseInfoDataResponse" element="tns:GetPurchaseInfoDataResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlaceDIDsOnTrunkRequest">
+    <wsdl:part name="PlaceDIDsOnTrunk" element="tns:PlaceDIDsOnTrunk"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDGroupInfoResponse">
+    <wsdl:part name="DIDGroup" element="tns:DIDGroup"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CancelDIDResponse">
+    <wsdl:part name="CancelDIDResponse" element="tns:CancelDIDResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IsPurchaseInfoValidRequest">
+    <wsdl:part name="IsPurchaseInfoValid" element="tns:IsPurchaseInfoValid"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDsInfoRequest">
+    <wsdl:part name="GetDIDsInfo" element="tns:GetDIDsInfo"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeliveryResponse"></wsdl:message>
+  <wsdl:message name="MapDIDResponse"></wsdl:message>
+  <wsdl:message name="GetFeaturesListRequest">
+    <wsdl:part name="GetFeaturesList" element="tns:GetFeaturesList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlaceOrderForLockResponse">
+    <wsdl:part name="PlaceOrderForLockResponse" element="tns:PlaceOrderForLockResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteCapacityGroupRequest">
+    <wsdl:part name="DeleteCapacityGroup" element="tns:DeleteCapacityGroup"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetPOPListRequest">
+    <wsdl:part name="GetPOPList" element="tns:GetPOPList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MapDIDRequest">
+    <wsdl:part name="MapDID" element="tns:MapDID"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RequestAddressVerificationResponse">
+    <wsdl:part name="RequestAddressVerificationResponse" element="tns:RequestAddressVerificationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteRegulationAddressResponse">
+    <wsdl:part name="DeleteRegulationAddressResponse" element="tns:DeleteRegulationAddressResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetTrunkListRequest">
+    <wsdl:part name="GetTrunkList" element="tns:GetTrunkList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlaceDIDsOrderRequest">
+    <wsdl:part name="PlaceDIDsOrder" element="tns:PlaceDIDsOrder"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateAddressForRegulationResponse">
+    <wsdl:part name="CreateAddressForRegulationResponse" element="tns:CreateAddressForRegulationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceResponse">
+    <wsdl:part name="GetAccountBalanceResponse" element="tns:GetAccountBalanceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetRegulationAddressListResponse">
+    <wsdl:part name="GetRegulationAddressListResponse" element="tns:GetRegulationAddressListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PurchaseTollfreeCreditResponse">
+    <wsdl:part name="PurchaseTollfreeCreditResponse" element="tns:PurchaseTollfreeCreditResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceRequest">
+    <wsdl:part name="GetAccountBalance" element="tns:GetAccountBalance"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="LimitDIDChannelsResponse">
+    <wsdl:part name="LimitDIDChannelsResponse" element="tns:LimitDIDChannelsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDGroupListRequest">
+    <wsdl:part name="GetDIDGroupList" element="tns:GetDIDGroupList"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfigureDnisRequest">
+    <wsdl:part name="ConfigureDnis" element="tns:ConfigureDnis"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDIDGroupPricingResponse">
+    <wsdl:part name="GetDIDGroupPricingResponse" element="tns:GetDIDGroupPricingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlaceDIDsOnTrunkResponse"></wsdl:message>
+  <wsdl:message name="GetTrunkListResponse">
+    <wsdl:part name="GetTrunkListResponse" element="tns:GetTrunkListResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VoxAPIIntf">
+    <wsdl:operation name="LimitDIDChannels">
+      <wsdl:input name="LimitDIDChannelsRequest" message="tns:LimitDIDChannelsRequest"></wsdl:input>
+      <wsdl:output name="LimitDIDChannelsResponse" message="tns:LimitDIDChannelsResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MapDID">
+      <wsdl:input name="MapDIDRequest" message="tns:MapDIDRequest"></wsdl:input>
+      <wsdl:output name="MapDIDResponse" message="tns:MapDIDResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrunkList">
+      <wsdl:input name="GetTrunkListRequest" message="tns:GetTrunkListRequest"></wsdl:input>
+      <wsdl:output name="GetTrunkListResponse" message="tns:GetTrunkListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDIDsFromTrunk">
+      <wsdl:input name="RemoveDIDsFromTrunkRequest" message="tns:RemoveDIDsFromTrunkRequest"></wsdl:input>
+      <wsdl:output name="RemoveDIDsFromTrunkResponse" message="tns:RemoveDIDsFromTrunkResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDGroupInfo">
+      <wsdl:input name="GetDIDGroupInfoRequest" message="tns:GetDIDGroupInfoRequest"></wsdl:input>
+      <wsdl:output name="GetDIDGroupInfoResponse" message="tns:GetDIDGroupInfoResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCapacityGroup">
+      <wsdl:input name="UpdateCapacityGroupRequest" message="tns:UpdateCapacityGroupRequest"></wsdl:input>
+      <wsdl:output name="UpdateCapacityGroupResponse" message="tns:UpdateCapacityGroupResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureDtmfMode">
+      <wsdl:input name="ConfigureDtmfModeRequest" message="tns:ConfigureDtmfModeRequest"></wsdl:input>
+      <wsdl:output name="ConfigureDtmfModeResponse" message="tns:ConfigureDtmfModeResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureDnis">
+      <wsdl:input name="ConfigureDnisRequest" message="tns:ConfigureDnisRequest"></wsdl:input>
+      <wsdl:output name="ConfigureDnisResponse" message="tns:ConfigureDnisResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTollfreeCreditPackageList">
+      <wsdl:input name="GetTollfreeCreditPackageListRequest" message="tns:GetTollfreeCreditPackageListRequest"></wsdl:input>
+      <wsdl:output name="GetTollfreeCreditPackageListResponse" message="tns:GetTollfreeCreditPackageListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkDidsToAddress">
+      <wsdl:input name="LinkDidsToAddressRequest" message="tns:LinkDidsToAddressRequest"></wsdl:input>
+      <wsdl:output name="LinkDidsToAddressResponse" message="tns:LinkDidsToAddressResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsPurchaseInfoValid">
+      <wsdl:input name="IsPurchaseInfoValidRequest" message="tns:IsPurchaseInfoValidRequest"></wsdl:input>
+      <wsdl:output name="IsPurchaseInfoValidResponse" message="tns:IsPurchaseInfoValidResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureCodecs">
+      <wsdl:input name="ConfigureCodecsRequest" message="tns:ConfigureCodecsRequest"></wsdl:input>
+      <wsdl:output name="ConfigureCodecsResponse" message="tns:ConfigureCodecsResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceOrderForLock">
+      <wsdl:input name="PlaceOrderForLockRequest" message="tns:PlaceOrderForLockRequest"></wsdl:input>
+      <wsdl:output name="PlaceOrderForLockResponse" message="tns:PlaceOrderForLockResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDGroupPricing">
+      <wsdl:input name="GetDIDGroupPricingRequest" message="tns:GetDIDGroupPricingRequest"></wsdl:input>
+      <wsdl:output name="GetDIDGroupPricingResponse" message="tns:GetDIDGroupPricingResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDGroupPurchaseLock">
+      <wsdl:input name="GetDIDGroupPurchaseLockRequest" message="tns:GetDIDGroupPurchaseLockRequest"></wsdl:input>
+      <wsdl:output name="GetDIDGroupPurchaseLockResponse" message="tns:GetDIDGroupPurchaseLockResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatesList">
+      <wsdl:input name="GetStatesListRequest" message="tns:GetStatesListRequest"></wsdl:input>
+      <wsdl:output name="GetStatesListResponse" message="tns:GetStatesListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOPList">
+      <wsdl:input name="GetPOPListRequest" message="tns:GetPOPListRequest"></wsdl:input>
+      <wsdl:output name="GetPOPListResponse" message="tns:GetPOPListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceDIDsOrder">
+      <wsdl:input name="PlaceDIDsOrderRequest" message="tns:PlaceDIDsOrderRequest"></wsdl:input>
+      <wsdl:output name="PlaceDIDsOrderResponse" message="tns:PlaceDIDsOrderResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MapDIDCheckingStatus">
+      <wsdl:input name="MapDIDCheckingStatusRequest" message="tns:MapDIDCheckingStatusRequest"></wsdl:input>
+      <wsdl:output name="MapDIDCheckingStatusResponse" message="tns:MapDIDCheckingStatusResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDGroupList">
+      <wsdl:input name="GetDIDGroupListRequest" message="tns:GetDIDGroupListRequest"></wsdl:input>
+      <wsdl:output name="GetDIDGroupListResponse" message="tns:GetDIDGroupListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCapacityGroup">
+      <wsdl:input name="DeleteCapacityGroupRequest" message="tns:DeleteCapacityGroupRequest"></wsdl:input>
+      <wsdl:output name="DeleteCapacityGroupResponse" message="tns:DeleteCapacityGroupResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDidFromCapacityGroup">
+      <wsdl:input name="RemoveDidFromCapacityGroupRequest" message="tns:RemoveDidFromCapacityGroupRequest"></wsdl:input>
+      <wsdl:output name="RemoveDidFromCapacityGroupResponse" message="tns:RemoveDidFromCapacityGroupResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesList">
+      <wsdl:input name="GetCountriesListRequest" message="tns:GetCountriesListRequest"></wsdl:input>
+      <wsdl:output name="GetCountriesListResponse" message="tns:GetCountriesListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestAddressVerification">
+      <wsdl:input name="RequestAddressVerificationRequest" message="tns:RequestAddressVerificationRequest"></wsdl:input>
+      <wsdl:output name="RequestAddressVerificationResponse" message="tns:RequestAddressVerificationResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapacityGroupList">
+      <wsdl:input name="GetCapacityGroupListRequest" message="tns:GetCapacityGroupListRequest"></wsdl:input>
+      <wsdl:output name="GetCapacityGroupListResponse" message="tns:GetCapacityGroupListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRegulationAddress">
+      <wsdl:input name="DeleteRegulationAddressRequest" message="tns:DeleteRegulationAddressRequest"></wsdl:input>
+      <wsdl:output name="DeleteRegulationAddressResponse" message="tns:DeleteRegulationAddressResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDID">
+      <wsdl:input name="CancelDIDRequest" message="tns:CancelDIDRequest"></wsdl:input>
+      <wsdl:output name="CancelDIDResponse" message="tns:CancelDIDResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCapacityGroup">
+      <wsdl:input name="CreateCapacityGroupRequest" message="tns:CreateCapacityGroupRequest"></wsdl:input>
+      <wsdl:output name="CreateCapacityGroupResponse" message="tns:CreateCapacityGroupResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <wsdl:input name="GetOrderStatusRequest" message="tns:GetOrderStatusRequest"></wsdl:input>
+      <wsdl:output name="GetOrderStatusResponse" message="tns:GetOrderStatusResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PurchaseTollfreeCredit">
+      <wsdl:input name="PurchaseTollfreeCreditRequest" message="tns:PurchaseTollfreeCreditRequest"></wsdl:input>
+      <wsdl:output name="PurchaseTollfreeCreditResponse" message="tns:PurchaseTollfreeCreditResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDsInfo">
+      <wsdl:input name="GetDIDsInfoRequest" message="tns:GetDIDsInfoRequest"></wsdl:input>
+      <wsdl:output name="GetDIDsInfoResponse" message="tns:GetDIDsInfoResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDelivery">
+      <wsdl:input name="UpdateDeliveryRequest" message="tns:UpdateDeliveryRequest"></wsdl:input>
+      <wsdl:output name="UpdateDeliveryResponse" message="tns:UpdateDeliveryResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MapDidToCapacityGroup">
+      <wsdl:input name="MapDidToCapacityGroupRequest" message="tns:MapDidToCapacityGroupRequest"></wsdl:input>
+      <wsdl:output name="MapDidToCapacityGroupResponse" message="tns:MapDidToCapacityGroupResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseInfoData">
+      <wsdl:input name="GetPurchaseInfoDataRequest" message="tns:GetPurchaseInfoDataRequest"></wsdl:input>
+      <wsdl:output name="GetPurchaseInfoDataResponse" message="tns:GetPurchaseInfoDataResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureT38">
+      <wsdl:input name="ConfigureT38Request" message="tns:ConfigureT38Request"></wsdl:input>
+      <wsdl:output name="ConfigureT38Response" message="tns:ConfigureT38Response"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureCpc">
+      <wsdl:input name="ConfigureCpcRequest" message="tns:ConfigureCpcRequest"></wsdl:input>
+      <wsdl:output name="ConfigureCpcResponse" message="tns:ConfigureCpcResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceDIDsOnTrunk">
+      <wsdl:input name="PlaceDIDsOnTrunkRequest" message="tns:PlaceDIDsOnTrunkRequest"></wsdl:input>
+      <wsdl:output name="PlaceDIDsOnTrunkResponse" message="tns:PlaceDIDsOnTrunkResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegulationAddressList">
+      <wsdl:input name="GetRegulationAddressListRequest" message="tns:GetRegulationAddressListRequest"></wsdl:input>
+      <wsdl:output name="GetRegulationAddressListResponse" message="tns:GetRegulationAddressListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <wsdl:input name="GetAccountBalanceRequest" message="tns:GetAccountBalanceRequest"></wsdl:input>
+      <wsdl:output name="GetAccountBalanceResponse" message="tns:GetAccountBalanceResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesList">
+      <wsdl:input name="GetFeaturesListRequest" message="tns:GetFeaturesListRequest"></wsdl:input>
+      <wsdl:output name="GetFeaturesListResponse" message="tns:GetFeaturesListResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAddressForRegulation">
+      <wsdl:input name="CreateAddressForRegulationRequest" message="tns:CreateAddressForRegulationRequest"></wsdl:input>
+      <wsdl:output name="CreateAddressForRegulationResponse" message="tns:CreateAddressForRegulationResponse"></wsdl:output>
+      <wsdl:fault name="VoxAPIFault" message="tns:VoxAPIFault"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VoxAPIHttpBinding" type="tns:VoxAPIIntf">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="LimitDIDChannels">
+      <wsdlsoap:operation soapAction="LimitDIDChannels"/>
+      <wsdl:input name="LimitDIDChannelsRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="LimitDIDChannelsResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MapDID">
+      <wsdlsoap:operation soapAction="MapDID"/>
+      <wsdl:input name="MapDIDRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MapDIDResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrunkList">
+      <wsdlsoap:operation soapAction="GetTrunkList"/>
+      <wsdl:input name="GetTrunkListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetTrunkListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDIDsFromTrunk">
+      <wsdlsoap:operation soapAction="RemoveDIDsFromTrunk"/>
+      <wsdl:input name="RemoveDIDsFromTrunkRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RemoveDIDsFromTrunkResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDGroupInfo">
+      <wsdlsoap:operation soapAction="GetDIDGroupInfo"/>
+      <wsdl:input name="GetDIDGroupInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetDIDGroupInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCapacityGroup">
+      <wsdlsoap:operation soapAction="UpdateCapacityGroup"/>
+      <wsdl:input name="UpdateCapacityGroupRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateCapacityGroupResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureDtmfMode">
+      <wsdlsoap:operation soapAction="ConfigureDtmfMode"/>
+      <wsdl:input name="ConfigureDtmfModeRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfigureDtmfModeResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureDnis">
+      <wsdlsoap:operation soapAction="ConfigureDnis"/>
+      <wsdl:input name="ConfigureDnisRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfigureDnisResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTollfreeCreditPackageList">
+      <wsdlsoap:operation soapAction="GetTollfreeCreditPackageList"/>
+      <wsdl:input name="GetTollfreeCreditPackageListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetTollfreeCreditPackageListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkDidsToAddress">
+      <wsdlsoap:operation soapAction="LinkDidsToAddress"/>
+      <wsdl:input name="LinkDidsToAddressRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="LinkDidsToAddressResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsPurchaseInfoValid">
+      <wsdlsoap:operation soapAction="IsPurchaseInfoValid"/>
+      <wsdl:input name="IsPurchaseInfoValidRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="IsPurchaseInfoValidResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureCodecs">
+      <wsdlsoap:operation soapAction="ConfigureCodecs"/>
+      <wsdl:input name="ConfigureCodecsRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfigureCodecsResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceOrderForLock">
+      <wsdlsoap:operation soapAction="PlaceOrderForLock"/>
+      <wsdl:input name="PlaceOrderForLockRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PlaceOrderForLockResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDGroupPricing">
+      <wsdlsoap:operation soapAction="GetDIDGroupPricing"/>
+      <wsdl:input name="GetDIDGroupPricingRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetDIDGroupPricingResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDGroupPurchaseLock">
+      <wsdlsoap:operation soapAction="GetDIDGroupPurchaseLock"/>
+      <wsdl:input name="GetDIDGroupPurchaseLockRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetDIDGroupPurchaseLockResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatesList">
+      <wsdlsoap:operation soapAction="GetStatesList"/>
+      <wsdl:input name="GetStatesListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetStatesListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOPList">
+      <wsdlsoap:operation soapAction="GetPOPList"/>
+      <wsdl:input name="GetPOPListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetPOPListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceDIDsOrder">
+      <wsdlsoap:operation soapAction="PlaceDIDsOrder"/>
+      <wsdl:input name="PlaceDIDsOrderRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PlaceDIDsOrderResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MapDIDCheckingStatus">
+      <wsdlsoap:operation soapAction="MapDIDCheckingStatus"/>
+      <wsdl:input name="MapDIDCheckingStatusRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MapDIDCheckingStatusResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDGroupList">
+      <wsdlsoap:operation soapAction="GetDIDGroupList"/>
+      <wsdl:input name="GetDIDGroupListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetDIDGroupListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCapacityGroup">
+      <wsdlsoap:operation soapAction="DeleteCapacityGroup"/>
+      <wsdl:input name="DeleteCapacityGroupRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeleteCapacityGroupResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDidFromCapacityGroup">
+      <wsdlsoap:operation soapAction="RemoveDidFromCapacityGroup"/>
+      <wsdl:input name="RemoveDidFromCapacityGroupRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RemoveDidFromCapacityGroupResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesList">
+      <wsdlsoap:operation soapAction="GetCountriesList"/>
+      <wsdl:input name="GetCountriesListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetCountriesListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestAddressVerification">
+      <wsdlsoap:operation soapAction="RequestAddressVerification"/>
+      <wsdl:input name="RequestAddressVerificationRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RequestAddressVerificationResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapacityGroupList">
+      <wsdlsoap:operation soapAction="GetCapacityGroupList"/>
+      <wsdl:input name="GetCapacityGroupListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetCapacityGroupListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRegulationAddress">
+      <wsdlsoap:operation soapAction="DeleteRegulationAddress"/>
+      <wsdl:input name="DeleteRegulationAddressRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeleteRegulationAddressResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDID">
+      <wsdlsoap:operation soapAction="CancelDID"/>
+      <wsdl:input name="CancelDIDRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CancelDIDResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCapacityGroup">
+      <wsdlsoap:operation soapAction="CreateCapacityGroup"/>
+      <wsdl:input name="CreateCapacityGroupRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CreateCapacityGroupResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderStatus">
+      <wsdlsoap:operation soapAction="GetOrderStatus"/>
+      <wsdl:input name="GetOrderStatusRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetOrderStatusResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PurchaseTollfreeCredit">
+      <wsdlsoap:operation soapAction="PurchaseTollfreeCredit"/>
+      <wsdl:input name="PurchaseTollfreeCreditRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PurchaseTollfreeCreditResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDIDsInfo">
+      <wsdlsoap:operation soapAction="GetDIDsInfo"/>
+      <wsdl:input name="GetDIDsInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetDIDsInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDelivery">
+      <wsdlsoap:operation soapAction="UpdateDelivery"/>
+      <wsdl:input name="UpdateDeliveryRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateDeliveryResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MapDidToCapacityGroup">
+      <wsdlsoap:operation soapAction="MapDidToCapacityGroup"/>
+      <wsdl:input name="MapDidToCapacityGroupRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MapDidToCapacityGroupResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseInfoData">
+      <wsdlsoap:operation soapAction="GetPurchaseInfoData"/>
+      <wsdl:input name="GetPurchaseInfoDataRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetPurchaseInfoDataResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureT38">
+      <wsdlsoap:operation soapAction="ConfigureT38"/>
+      <wsdl:input name="ConfigureT38Request">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfigureT38Response">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureCpc">
+      <wsdlsoap:operation soapAction="ConfigureCpc"/>
+      <wsdl:input name="ConfigureCpcRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfigureCpcResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceDIDsOnTrunk">
+      <wsdlsoap:operation soapAction="PlaceDIDsOnTrunk"/>
+      <wsdl:input name="PlaceDIDsOnTrunkRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PlaceDIDsOnTrunkResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegulationAddressList">
+      <wsdlsoap:operation soapAction="GetRegulationAddressList"/>
+      <wsdl:input name="GetRegulationAddressListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetRegulationAddressListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <wsdlsoap:operation soapAction="GetAccountBalance"/>
+      <wsdl:input name="GetAccountBalanceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetAccountBalanceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturesList">
+      <wsdlsoap:operation soapAction="GetFeaturesList"/>
+      <wsdl:input name="GetFeaturesListRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetFeaturesListResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAddressForRegulation">
+      <wsdlsoap:operation soapAction="CreateAddressForRegulation"/>
+      <wsdl:input name="CreateAddressForRegulationRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CreateAddressForRegulationResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VoxAPIFault">
+        <wsdlsoap:fault name="VoxAPIFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VoxAPI">
+    <wsdl:port name="VoxAPIHttpPort" binding="tns:VoxAPIHttpBinding">
+      <wsdlsoap:address location="https://sandbox.voxbone.com/VoxAPI/services/VoxAPI"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint></con:endpoints><con:operation isOneWay="false" action="CancelDID" name="CancelDID" bindingOperationName="CancelDID" type="Request-Response" outputName="CancelDIDResponse" inputName="CancelDIDRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:CancelDID>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DIDsID>?</vox:DIDsID>
+      </vox:CancelDID>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="CancelDID"/></con:call></con:operation><con:operation isOneWay="false" action="ConfigureCodecs" name="ConfigureCodecs" bindingOperationName="ConfigureCodecs" type="Request-Response" outputName="ConfigureCodecsResponse" inputName="ConfigureCodecsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:ConfigureCodecs>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:Codecs>
+            <!--1 to 4 repetitions:-->
+            <vox:SipCodecs>?</vox:SipCodecs>
+         </vox:Codecs>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+      </vox:ConfigureCodecs>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ConfigureCodecs"/></con:call></con:operation><con:operation isOneWay="false" action="ConfigureCpc" name="ConfigureCpc" bindingOperationName="ConfigureCpc" type="Request-Response" outputName="ConfigureCpcResponse" inputName="ConfigureCpcRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:ConfigureCpc>
+         <!--You may enter the following 4 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:PhoneType>?</vox:PhoneType>
+         <vox:Block>?</vox:Block>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+      </vox:ConfigureCpc>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="ConfigureCpc"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="ConfigureDnis" name="ConfigureDnis" bindingOperationName="ConfigureDnis" type="Request-Response" outputName="ConfigureDnisResponse" inputName="ConfigureDnisRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:ConfigureDnis>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:Dnis>?</vox:Dnis>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+      </vox:ConfigureDnis>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="ConfigureDnis"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="ConfigureDtmfMode" name="ConfigureDtmfMode" bindingOperationName="ConfigureDtmfMode" type="Request-Response" outputName="ConfigureDtmfModeResponse" inputName="ConfigureDtmfModeRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:ConfigureDtmfMode>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DtmfMode>?</vox:DtmfMode>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+      </vox:ConfigureDtmfMode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ConfigureDtmfMode"/></con:call></con:operation><con:operation isOneWay="false" action="ConfigureT38" name="ConfigureT38" bindingOperationName="ConfigureT38" type="Request-Response" outputName="ConfigureT38Response" inputName="ConfigureT38Request" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:ConfigureT38>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:T38>?</vox:T38>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+      </vox:ConfigureT38>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ConfigureT38"/></con:call></con:operation><con:operation isOneWay="false" action="CreateAddressForRegulation" name="CreateAddressForRegulation" bindingOperationName="CreateAddressForRegulation" type="Request-Response" outputName="CreateAddressForRegulationResponse" inputName="CreateAddressForRegulationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:CreateAddressForRegulation>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:PurchaseInfo>
+            <!--You may enter the following 14 items in any order-->
+            <!--Optional:-->
+            <vox:Firstname>?</vox:Firstname>
+            <!--Optional:-->
+            <vox:Lastname>?</vox:Lastname>
+            <!--Optional:-->
+            <vox:Company>?</vox:Company>
+            <!--Optional:-->
+            <vox:Salutation>?</vox:Salutation>
+            <!--Optional:-->
+            <vox:Street>?</vox:Street>
+            <!--Optional:-->
+            <vox:StreetCode>?</vox:StreetCode>
+            <!--Optional:-->
+            <vox:MunicipalityCode>?</vox:MunicipalityCode>
+            <!--Optional:-->
+            <vox:BuildingNumber>?</vox:BuildingNumber>
+            <!--Optional:-->
+            <vox:BuildingLetter>?</vox:BuildingLetter>
+            <!--Optional:-->
+            <vox:City>?</vox:City>
+            <!--Optional:-->
+            <vox:ZipCode>?</vox:ZipCode>
+            <!--Optional:-->
+            <vox:CountryCodeA2>?</vox:CountryCodeA2>
+            <!--Optional:-->
+            <vox:RegulationAddressId>?</vox:RegulationAddressId>
+            <!--Optional:-->
+            <vox:RegulationAddressStatus>?</vox:RegulationAddressStatus>
+         </vox:PurchaseInfo>
+         <vox:RequestProofOfAddressVerification>?</vox:RequestProofOfAddressVerification>
+      </vox:CreateAddressForRegulation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="CreateAddressForRegulation"/></con:call></con:operation><con:operation isOneWay="false" action="CreateCapacityGroup" name="CreateCapacityGroup" bindingOperationName="CreateCapacityGroup" type="Request-Response" outputName="CreateCapacityGroupResponse" inputName="CreateCapacityGroupRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:CreateCapacityGroup>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:NameCapacityGroup>?</vox:NameCapacityGroup>
+         <vox:Capacity>?</vox:Capacity>
+      </vox:CreateCapacityGroup>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="CreateCapacityGroup"/></con:call></con:operation><con:operation isOneWay="false" action="DeleteCapacityGroup" name="DeleteCapacityGroup" bindingOperationName="DeleteCapacityGroup" type="Request-Response" outputName="DeleteCapacityGroupResponse" inputName="DeleteCapacityGroupRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:DeleteCapacityGroup>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:CapacityGroupID>?</vox:CapacityGroupID>
+      </vox:DeleteCapacityGroup>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="DeleteCapacityGroup"/></con:call></con:operation><con:operation isOneWay="false" action="DeleteRegulationAddress" name="DeleteRegulationAddress" bindingOperationName="DeleteRegulationAddress" type="Request-Response" outputName="DeleteRegulationAddressResponse" inputName="DeleteRegulationAddressRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:DeleteRegulationAddress>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:AddressID>?</vox:AddressID>
+      </vox:DeleteRegulationAddress>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="DeleteRegulationAddress"/></con:call></con:operation><con:operation isOneWay="false" action="GetAccountBalance" name="GetAccountBalance" bindingOperationName="GetAccountBalance" type="Request-Response" outputName="GetAccountBalanceResponse" inputName="GetAccountBalanceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetAccountBalance>
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+      </vox:GetAccountBalance>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetAccountBalance"/></con:call></con:operation><con:operation isOneWay="false" action="GetCapacityGroupList" name="GetCapacityGroupList" bindingOperationName="GetCapacityGroupList" type="Request-Response" outputName="GetCapacityGroupListResponse" inputName="GetCapacityGroupListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetCapacityGroupList>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <!--Optional:-->
+         <vox:Filter>
+            <!--You may enter the following 2 items in any order-->
+            <!--Optional:-->
+            <vox:NameCapacityGroup>?</vox:NameCapacityGroup>
+            <!--Optional:-->
+            <vox:E164>?</vox:E164>
+         </vox:Filter>
+      </vox:GetCapacityGroupList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetCapacityGroupList"/></con:call></con:operation><con:operation isOneWay="false" action="GetCountriesList" name="GetCountriesList" bindingOperationName="GetCountriesList" type="Request-Response" outputName="GetCountriesListResponse" inputName="GetCountriesListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetCountriesList>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>waruna</vox:Username>
+            <vox:Key>2014-09-17 16:07:12:123123456789</vox:Key>
+            <vox:Hash>123123456789</vox:Hash>
+         </vox:UserToken>
+         <vox:Type>NATIONAL</vox:Type>
+         
+      </vox:GetCountriesList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetCountriesList"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="GetDIDGroupInfo" name="GetDIDGroupInfo" bindingOperationName="GetDIDGroupInfo" type="Request-Response" outputName="GetDIDGroupInfoResponse" inputName="GetDIDGroupInfoRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetDIDGroupInfo>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DIDGroupID>?</vox:DIDGroupID>
+      </vox:GetDIDGroupInfo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDIDGroupInfo"/></con:call></con:operation><con:operation isOneWay="false" action="GetDIDGroupList" name="GetDIDGroupList" bindingOperationName="GetDIDGroupList" type="Request-Response" outputName="GetDIDGroupListResponse" inputName="GetDIDGroupListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetDIDGroupList>
+         <!--You may enter the following 5 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:CountryID>?</vox:CountryID>
+         <vox:Type>?</vox:Type>
+         <!--Optional:-->
+         <vox:Filter>
+            <!--You may enter the following 5 items in any order-->
+            <!--Optional:-->
+            <vox:HideEmpty>true</vox:HideEmpty>
+            <!--Optional:-->
+            <vox:StateID>?</vox:StateID>
+            <!--Optional:-->
+            <vox:CleanedCityNamePattern>?</vox:CleanedCityNamePattern>
+            <!--Optional:-->
+            <vox:PageNumber>?</vox:PageNumber>
+            <!--Optional:-->
+            <vox:PageSize>?</vox:PageSize>
+         </vox:Filter>
+         <!--Optional:-->
+         <vox:FeaturesFilter>
+            <!--1 or more repetitions:-->
+            <vox:FeaturesIDs>?</vox:FeaturesIDs>
+         </vox:FeaturesFilter>
+      </vox:GetDIDGroupList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDIDGroupList"/></con:call></con:operation><con:operation isOneWay="false" action="GetDIDGroupPricing" name="GetDIDGroupPricing" bindingOperationName="GetDIDGroupPricing" type="Request-Response" outputName="GetDIDGroupPricingResponse" inputName="GetDIDGroupPricingRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetDIDGroupPricing>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DIDGroupID>?</vox:DIDGroupID>
+         <!--Optional:-->
+         <vox:quantity>?</vox:quantity>
+      </vox:GetDIDGroupPricing>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDIDGroupPricing"/></con:call></con:operation><con:operation isOneWay="false" action="GetDIDGroupPurchaseLock" name="GetDIDGroupPurchaseLock" bindingOperationName="GetDIDGroupPurchaseLock" type="Request-Response" outputName="GetDIDGroupPurchaseLockResponse" inputName="GetDIDGroupPurchaseLockRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetDIDGroupPurchaseLock>
+         <!--You may enter the following 4 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DIDGroupID>?</vox:DIDGroupID>
+         <vox:Quantity>?</vox:Quantity>
+         <!--Optional:-->
+         <vox:PurchaseInfo>
+            <!--You may enter the following 14 items in any order-->
+            <!--Optional:-->
+            <vox:Firstname>?</vox:Firstname>
+            <!--Optional:-->
+            <vox:Lastname>?</vox:Lastname>
+            <!--Optional:-->
+            <vox:Company>?</vox:Company>
+            <!--Optional:-->
+            <vox:Salutation>?</vox:Salutation>
+            <!--Optional:-->
+            <vox:Street>?</vox:Street>
+            <!--Optional:-->
+            <vox:StreetCode>?</vox:StreetCode>
+            <!--Optional:-->
+            <vox:MunicipalityCode>?</vox:MunicipalityCode>
+            <!--Optional:-->
+            <vox:BuildingNumber>?</vox:BuildingNumber>
+            <!--Optional:-->
+            <vox:BuildingLetter>?</vox:BuildingLetter>
+            <!--Optional:-->
+            <vox:City>?</vox:City>
+            <!--Optional:-->
+            <vox:ZipCode>?</vox:ZipCode>
+            <!--Optional:-->
+            <vox:CountryCodeA2>?</vox:CountryCodeA2>
+            <!--Optional:-->
+            <vox:RegulationAddressId>?</vox:RegulationAddressId>
+            <!--Optional:-->
+            <vox:RegulationAddressStatus>?</vox:RegulationAddressStatus>
+         </vox:PurchaseInfo>
+      </vox:GetDIDGroupPurchaseLock>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDIDGroupPurchaseLock"/></con:call></con:operation><con:operation isOneWay="false" action="GetDIDsInfo" name="GetDIDsInfo" bindingOperationName="GetDIDsInfo" type="Request-Response" outputName="GetDIDsInfoResponse" inputName="GetDIDsInfoRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetDIDsInfo>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <!--Optional:-->
+         <vox:Filter>
+            <!--You may enter the following 6 items in any order-->
+            <!--Optional:-->
+            <vox:E164>?</vox:E164>
+            <!--Optional:-->
+            <vox:OrderReference>?</vox:OrderReference>
+            <!--Optional:-->
+            <vox:MappingStatus>?</vox:MappingStatus>
+            <!--Optional:-->
+            <vox:NeedAddressLink>?</vox:NeedAddressLink>
+            <!--Optional:-->
+            <vox:PageNumber>?</vox:PageNumber>
+            <!--Optional:-->
+            <vox:PageSize>?</vox:PageSize>
+         </vox:Filter>
+      </vox:GetDIDsInfo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDIDsInfo"/></con:call></con:operation><con:operation isOneWay="false" action="GetFeaturesList" name="GetFeaturesList" bindingOperationName="GetFeaturesList" type="Request-Response" outputName="GetFeaturesListResponse" inputName="GetFeaturesListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetFeaturesList>
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+      </vox:GetFeaturesList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetFeaturesList"/></con:call></con:operation><con:operation isOneWay="false" action="GetOrderStatus" name="GetOrderStatus" bindingOperationName="GetOrderStatus" type="Request-Response" outputName="GetOrderStatusResponse" inputName="GetOrderStatusRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetOrderStatus>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:OrderReference>?</vox:OrderReference>
+      </vox:GetOrderStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetOrderStatus"/></con:call></con:operation><con:operation isOneWay="false" action="GetPOPList" name="GetPOPList" bindingOperationName="GetPOPList" type="Request-Response" outputName="GetPOPListResponse" inputName="GetPOPListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetPOPList>
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+      </vox:GetPOPList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetPOPList"/></con:call></con:operation><con:operation isOneWay="false" action="GetPurchaseInfoData" name="GetPurchaseInfoData" bindingOperationName="GetPurchaseInfoData" type="Request-Response" outputName="GetPurchaseInfoDataResponse" inputName="GetPurchaseInfoDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetPurchaseInfoData>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:CountryCodeA2>?</vox:CountryCodeA2>
+         <vox:AreaCode>?</vox:AreaCode>
+      </vox:GetPurchaseInfoData>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetPurchaseInfoData"/></con:call></con:operation><con:operation isOneWay="false" action="GetRegulationAddressList" name="GetRegulationAddressList" bindingOperationName="GetRegulationAddressList" type="Request-Response" outputName="GetRegulationAddressListResponse" inputName="GetRegulationAddressListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetRegulationAddressList>
+         <!--You may enter the following 8 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <!--Optional:-->
+         <vox:CountryID>?</vox:CountryID>
+         <!--Optional:-->
+         <vox:FirstName>?</vox:FirstName>
+         <!--Optional:-->
+         <vox:LastName>?</vox:LastName>
+         <!--Optional:-->
+         <vox:Company>?</vox:Company>
+         <!--Optional:-->
+         <vox:City>?</vox:City>
+         <!--Optional:-->
+         <vox:Zip>?</vox:Zip>
+         <!--Optional:-->
+         <vox:AddressStatus>?</vox:AddressStatus>
+      </vox:GetRegulationAddressList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetRegulationAddressList"/></con:call></con:operation><con:operation isOneWay="false" action="GetStatesList" name="GetStatesList" bindingOperationName="GetStatesList" type="Request-Response" outputName="GetStatesListResponse" inputName="GetStatesListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetStatesList>
+         <!--You may enter the following 4 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:CountryID>?</vox:CountryID>
+         <!--Optional:-->
+         <vox:Type>?</vox:Type>
+         <!--Optional:-->
+         <vox:FeaturesFilter>
+            <!--1 or more repetitions:-->
+            <vox:FeaturesIDs>?</vox:FeaturesIDs>
+         </vox:FeaturesFilter>
+      </vox:GetStatesList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetStatesList"/></con:call></con:operation><con:operation isOneWay="false" action="GetTollfreeCreditPackageList" name="GetTollfreeCreditPackageList" bindingOperationName="GetTollfreeCreditPackageList" type="Request-Response" outputName="GetTollfreeCreditPackageListResponse" inputName="GetTollfreeCreditPackageListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetTollfreeCreditPackageList>
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+      </vox:GetTollfreeCreditPackageList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetTollfreeCreditPackageList"/></con:call></con:operation><con:operation isOneWay="false" action="GetTrunkList" name="GetTrunkList" bindingOperationName="GetTrunkList" type="Request-Response" outputName="GetTrunkListResponse" inputName="GetTrunkListRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:GetTrunkList>
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+      </vox:GetTrunkList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetTrunkList"/></con:call></con:operation><con:operation isOneWay="false" action="IsPurchaseInfoValid" name="IsPurchaseInfoValid" bindingOperationName="IsPurchaseInfoValid" type="Request-Response" outputName="IsPurchaseInfoValidResponse" inputName="IsPurchaseInfoValidRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:IsPurchaseInfoValid>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DIDGroupID>?</vox:DIDGroupID>
+         <vox:PurchaseInfo>
+            <!--You may enter the following 14 items in any order-->
+            <!--Optional:-->
+            <vox:Firstname>?</vox:Firstname>
+            <!--Optional:-->
+            <vox:Lastname>?</vox:Lastname>
+            <!--Optional:-->
+            <vox:Company>?</vox:Company>
+            <!--Optional:-->
+            <vox:Salutation>?</vox:Salutation>
+            <!--Optional:-->
+            <vox:Street>?</vox:Street>
+            <!--Optional:-->
+            <vox:StreetCode>?</vox:StreetCode>
+            <!--Optional:-->
+            <vox:MunicipalityCode>?</vox:MunicipalityCode>
+            <!--Optional:-->
+            <vox:BuildingNumber>?</vox:BuildingNumber>
+            <!--Optional:-->
+            <vox:BuildingLetter>?</vox:BuildingLetter>
+            <!--Optional:-->
+            <vox:City>?</vox:City>
+            <!--Optional:-->
+            <vox:ZipCode>?</vox:ZipCode>
+            <!--Optional:-->
+            <vox:CountryCodeA2>?</vox:CountryCodeA2>
+            <!--Optional:-->
+            <vox:RegulationAddressId>?</vox:RegulationAddressId>
+            <!--Optional:-->
+            <vox:RegulationAddressStatus>?</vox:RegulationAddressStatus>
+         </vox:PurchaseInfo>
+      </vox:IsPurchaseInfoValid>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="IsPurchaseInfoValid"/></con:call></con:operation><con:operation isOneWay="false" action="LimitDIDChannels" name="LimitDIDChannels" bindingOperationName="LimitDIDChannels" type="Request-Response" outputName="LimitDIDChannelsResponse" inputName="LimitDIDChannelsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:LimitDIDChannels>
+         <!--You may enter the following 4 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DIDsID>?</vox:DIDsID>
+         <!--Optional:-->
+         <vox:LimitCapacity>?</vox:LimitCapacity>
+         <vox:UseMaximum>true</vox:UseMaximum>
+      </vox:LimitDIDChannels>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LimitDIDChannels"/></con:call></con:operation><con:operation isOneWay="false" action="LinkDidsToAddress" name="LinkDidsToAddress" bindingOperationName="LinkDidsToAddress" type="Request-Response" outputName="LinkDidsToAddressResponse" inputName="LinkDidsToAddressRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:LinkDidsToAddress>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+         <vox:AddressID>?</vox:AddressID>
+      </vox:LinkDidsToAddress>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="LinkDidsToAddress"/></con:call></con:operation><con:operation isOneWay="false" action="MapDID" name="MapDID" bindingOperationName="MapDID" type="Request-Response" outputName="MapDIDResponse" inputName="MapDIDRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:MapDID>
+         <!--You may enter the following 5 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+         <vox:Protocol>?</vox:Protocol>
+         <vox:URI>?</vox:URI>
+         <!--Optional:-->
+         <vox:Description>?</vox:Description>
+      </vox:MapDID>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="MapDID"/></con:call></con:operation><con:operation isOneWay="false" action="MapDIDCheckingStatus" name="MapDIDCheckingStatus" bindingOperationName="MapDIDCheckingStatus" type="Request-Response" outputName="MapDIDCheckingStatusResponse" inputName="MapDIDCheckingStatusRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:MapDIDCheckingStatus>
+         <!--You may enter the following 4 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+         <vox:Protocol>?</vox:Protocol>
+         <vox:URI>?</vox:URI>
+      </vox:MapDIDCheckingStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="MapDIDCheckingStatus"/></con:call></con:operation><con:operation isOneWay="false" action="MapDidToCapacityGroup" name="MapDidToCapacityGroup" bindingOperationName="MapDidToCapacityGroup" type="Request-Response" outputName="MapDidToCapacityGroupResponse" inputName="MapDidToCapacityGroupRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:MapDidToCapacityGroup>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+         <vox:CapacityGroupID>?</vox:CapacityGroupID>
+      </vox:MapDidToCapacityGroup>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="MapDidToCapacityGroup"/></con:call></con:operation><con:operation isOneWay="false" action="PlaceDIDsOnTrunk" name="PlaceDIDsOnTrunk" bindingOperationName="PlaceDIDsOnTrunk" type="Request-Response" outputName="PlaceDIDsOnTrunkResponse" inputName="PlaceDIDsOnTrunkRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:PlaceDIDsOnTrunk>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+         <vox:TrunkID>?</vox:TrunkID>
+      </vox:PlaceDIDsOnTrunk>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="PlaceDIDsOnTrunk"/></con:call></con:operation><con:operation isOneWay="false" action="PlaceDIDsOrder" name="PlaceDIDsOrder" bindingOperationName="PlaceDIDsOrder" type="Request-Response" outputName="PlaceDIDsOrderResponse" inputName="PlaceDIDsOrderRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:PlaceDIDsOrder>
+         <!--You may enter the following 6 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DIDGroupID>?</vox:DIDGroupID>
+         <vox:Quantity>?</vox:Quantity>
+         <vox:AllowAsynchronous>false</vox:AllowAsynchronous>
+         <!--Optional:-->
+         <vox:PurchaseInfo>
+            <!--You may enter the following 14 items in any order-->
+            <!--Optional:-->
+            <vox:Firstname>?</vox:Firstname>
+            <!--Optional:-->
+            <vox:Lastname>?</vox:Lastname>
+            <!--Optional:-->
+            <vox:Company>?</vox:Company>
+            <!--Optional:-->
+            <vox:Salutation>?</vox:Salutation>
+            <!--Optional:-->
+            <vox:Street>?</vox:Street>
+            <!--Optional:-->
+            <vox:StreetCode>?</vox:StreetCode>
+            <!--Optional:-->
+            <vox:MunicipalityCode>?</vox:MunicipalityCode>
+            <!--Optional:-->
+            <vox:BuildingNumber>?</vox:BuildingNumber>
+            <!--Optional:-->
+            <vox:BuildingLetter>?</vox:BuildingLetter>
+            <!--Optional:-->
+            <vox:City>?</vox:City>
+            <!--Optional:-->
+            <vox:ZipCode>?</vox:ZipCode>
+            <!--Optional:-->
+            <vox:CountryCodeA2>?</vox:CountryCodeA2>
+            <!--Optional:-->
+            <vox:RegulationAddressId>?</vox:RegulationAddressId>
+            <!--Optional:-->
+            <vox:RegulationAddressStatus>?</vox:RegulationAddressStatus>
+         </vox:PurchaseInfo>
+         <!--Optional:-->
+         <vox:FeaturesFilter>
+            <!--1 or more repetitions:-->
+            <vox:FeaturesIDs>?</vox:FeaturesIDs>
+         </vox:FeaturesFilter>
+      </vox:PlaceDIDsOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="PlaceDIDsOrder"/></con:call></con:operation><con:operation isOneWay="false" action="PlaceOrderForLock" name="PlaceOrderForLock" bindingOperationName="PlaceOrderForLock" type="Request-Response" outputName="PlaceOrderForLockResponse" inputName="PlaceOrderForLockRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:PlaceOrderForLock>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:LockID>?</vox:LockID>
+      </vox:PlaceOrderForLock>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="PlaceOrderForLock"/></con:call></con:operation><con:operation isOneWay="false" action="PurchaseTollfreeCredit" name="PurchaseTollfreeCredit" bindingOperationName="PurchaseTollfreeCredit" type="Request-Response" outputName="PurchaseTollfreeCreditResponse" inputName="PurchaseTollfreeCreditRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:PurchaseTollfreeCredit>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:TollfreeCreditPackageID>?</vox:TollfreeCreditPackageID>
+         <vox:Quantity>?</vox:Quantity>
+      </vox:PurchaseTollfreeCredit>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="PurchaseTollfreeCredit"/></con:call></con:operation><con:operation isOneWay="false" action="RemoveDidFromCapacityGroup" name="RemoveDidFromCapacityGroup" bindingOperationName="RemoveDidFromCapacityGroup" type="Request-Response" outputName="RemoveDidFromCapacityGroupResponse" inputName="RemoveDidFromCapacityGroupRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:RemoveDidFromCapacityGroup>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+      </vox:RemoveDidFromCapacityGroup>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="RemoveDidFromCapacityGroup"/></con:call></con:operation><con:operation isOneWay="false" action="RemoveDIDsFromTrunk" name="RemoveDIDsFromTrunk" bindingOperationName="RemoveDIDsFromTrunk" type="Request-Response" outputName="RemoveDIDsFromTrunkResponse" inputName="RemoveDIDsFromTrunkRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:RemoveDIDsFromTrunk>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+      </vox:RemoveDIDsFromTrunk>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="RemoveDIDsFromTrunk"/></con:call></con:operation><con:operation isOneWay="false" action="RequestAddressVerification" name="RequestAddressVerification" bindingOperationName="RequestAddressVerification" type="Request-Response" outputName="RequestAddressVerificationResponse" inputName="RequestAddressVerificationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:RequestAddressVerification>
+         <!--You may enter the following 2 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:AddressID>?</vox:AddressID>
+      </vox:RequestAddressVerification>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="RequestAddressVerification"/></con:call></con:operation><con:operation isOneWay="false" action="UpdateCapacityGroup" name="UpdateCapacityGroup" bindingOperationName="UpdateCapacityGroup" type="Request-Response" outputName="UpdateCapacityGroupResponse" inputName="UpdateCapacityGroupRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:UpdateCapacityGroup>
+         <!--You may enter the following 4 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:NameCapacityGroup>?</vox:NameCapacityGroup>
+         <vox:Capacity>?</vox:Capacity>
+         <vox:CapacityGroupID>?</vox:CapacityGroupID>
+      </vox:UpdateCapacityGroup>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="UpdateCapacityGroup"/></con:call></con:operation><con:operation isOneWay="false" action="UpdateDelivery" name="UpdateDelivery" bindingOperationName="UpdateDelivery" type="Request-Response" outputName="UpdateDeliveryResponse" inputName="UpdateDeliveryRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sandbox.voxbone.com/VoxAPI/services/VoxAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vox="http://www.voxbone.com/VoxAPI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vox:UpdateDelivery>
+         <!--You may enter the following 3 items in any order-->
+         <vox:UserToken>
+            <!--You may enter the following 3 items in any order-->
+            <vox:Username>?</vox:Username>
+            <vox:Key>?</vox:Key>
+            <vox:Hash>?</vox:Hash>
+         </vox:UserToken>
+         <vox:DeliveryID>?</vox:DeliveryID>
+         <vox:ArrayOfDIDsIDs>
+            <!--1 or more repetitions:-->
+            <vox:DIDsID>?</vox:DIDsID>
+         </vox:ArrayOfDIDsIDs>
+      </vox:UpdateDelivery>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="UpdateDelivery"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
